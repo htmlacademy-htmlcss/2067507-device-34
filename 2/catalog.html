@@ -18,7 +18,6 @@
       <button type="submit" name="submit" class="submit">Найти</button>
     </form>
     <nav class="menu">
-      <h2 class="visually-hidden">Меню пользователя</h2>
       <ul class="menu-list">
         <li class="menu-item">
           <a class="menu-link" href="">Войти</a>
@@ -36,8 +35,7 @@
     </nav>
     <ul class="items-list">
       <li class="catalog">
-        <!--Не уверена, что делаю правильно это, нужна помощь-->
-        <a href="#" title="Каталог">Каталог</a>
+        <button type="button" class="menu-catalog">Каталог</button>
         <ul>
           <li class="catalog-item">
             <a href="#" title="Виртуальная реальность">Виртуальная реальность</a>
@@ -149,8 +147,8 @@
         <option value="cheap">Сначала дешёвое</option>
         <option value="expensive">Сначала дорогое</option>
       </select>
-      <input type="button" name="up" value="Возрастание">
-      <input type="button" name="down" value="Убывание">
+      <button class="arrows" type="button"> Возрастание></button>
+      <button class="arrows" type="button">Убывание</button>
     </div>
     <ul class="product-list">
       <li class="product-card">

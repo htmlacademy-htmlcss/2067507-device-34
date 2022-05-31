@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Девайс</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
       <img class="logo" src="images/logo.svg" width="145" height="36" alt="Логотип Интернет-магазина Девайс.">
     </a>
     <form action="https://echo.htmlacademy.ru" method="POST">
-      <input type="search" placeholder="Текст поиска">
+      <input type="search" class="search-button" placeholder="Текст поиска">
       <button type="submit" name="submit" class="submit">Найти</button>
     </form>
     <nav class="menu">
@@ -35,25 +36,25 @@
 
     <ul class="items-list">
       <li class="catalog">
-        <button type="button" class="menu-catalog">Каталог</button>
+        <button type="button" class="navigation-link">Каталог товаров</button>
         <ul>
           <li class="catalog-item">
-            <a href="#" title="Виртуальная реальность">Виртуальная реальность</a>
+            <a class="catalog-text" href="#" title="Виртуальная реальность">Виртуальная реальность</a>
           </li>
           <li class="catalog-item">
-            <a href="catalog.html" title="Моноподы для селфи">Моноподы для селфи</a>
+            <a class="catalog-text" href="catalog.html" title="Моноподы для селфи">Моноподы для селфи</a>
           </li>
           <li class="catalog-item">
-            <a href="#" title="Экшн камеры">Экшн камеры</a>
+            <a class="catalog-text" href="#" title="Экшн камеры">Экшн камеры</a>
           </li>
           <li class="catalog-item">
-            <a href="#" title="Фитнес браслеты">Фитнес браслеты</a>
+            <a class="catalog-text" href="#" title="Фитнес браслеты">Фитнес браслеты</a>
           </li>
           <li class="catalog-item">
-            <a href="#" title="Умные часы">Умные часы</a>
+            <a class="catalog-text" href="#" title="Умные часы">Умные часы</a>
           </li>
           <li class="catalog-item">
-            <a href="#" title="Квадрокоптеры">Квадрокоптеры</a>
+            <a class="catalog-text" href="#" title="Квадрокоптеры">Квадрокоптеры</a>
           </li>
         </ul>
       </li>
@@ -72,23 +73,23 @@
     <ul class="sliders">
       <li class="slider-headers_header">
         <p class="number-text">01</p>
-        <h2>Порхает как бабочка, жалит как пчела!</h2>
-        <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную
+        <h2 class="sliders-header">Порхает как бабочка, жалит как пчела!</h2>
+        <p class="subtitle">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную
           камеру.
         </p>
-        <a href="#" title="Подробнее">Подробнее</a>
+        <a class="button" href="#" title="Подробнее">Подробнее</a>
         <table>
           <caption class="visually-hidden">Характеристики</caption>
           <tr>
-            <td>Длительность полета</td>
-            <td>Радус поражения</td>
+            <td class="features-text">Длительность полета</td>
+            <td class="features-text">Радус поражения</td>
           </tr>
           <tr>
             <td>
-              <b>800 м</b>
+              <b class="features">800 м</b>
             </td>
             <td>
-              <b>50 м</b>
+              <b class="features">50 м</b>
             </td>
           </tr>
         </table>
@@ -96,18 +97,18 @@
       </li>
       <li class="slider-headers_header">
         <p class="number-text">02</p>
-        <h2>Худеем <br>правильно!</h2>
-        <p>Мотивирующие фитнес-браслеты помогут найти в себе силыне пропускать занятия и соблюдать диету.
+        <h2 class="sliders-header">Худеем правильно!</h2>
+        <p class="subtitle">Мотивирующие фитнес-браслеты помогут найти в себе силыне пропускать занятия и соблюдать диету.
         </p>
-        <a href="#" title="Подробнее">Подробнее</a>
+        <a class="button" href="#" title="Подробнее">Подробнее</a>
         <table>
           <caption class="visually-hidden">Характеристики</caption>
           <tr>
-            <td>Без подзарядки</td>
+            <td class="features-text">Без подзарядки</td>
           </tr>
           <tr>
             <td>
-              <b>48 часов</b>
+              <b class="features">48 часов</b>
             </td>
           </tr>
         </table>
@@ -115,27 +116,27 @@
       </li>
       <li class="slider-headers_header">
         <p class="number-text">03</p>
-        <h2>Делай селфи, как Бен Стиллер! </h2>
-        <p>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом
+        <h2 class="sliders-header">Делай селфи, как Бен Стиллер! </h2>
+        <p class="subtitle">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом
           всего 5 кг.
         </p>
-        <a href="#" title="Подробнее">Подробнее</a>
+        <a class="button" href="#" title="Подробнее">Подробнее</a>
         <table>
           <caption class="visually-hidden">Характеристики</caption>
           <tr>
-            <td>Длина палки</td>
-            <td>Вес палки</td>
-            <td>Материал</td>
+            <td class="features-text">Длина палки</td>
+            <td class="features-text">Вес палки</td>
+            <td class="features-text">Материал</td>
           </tr>
           <tr>
             <td>
-              <b>8,5 м</b>
+              <b class="features">8,5 м</b>
             </td>
             <td>
-              <b>5 кг</b>
+              <b class="features">5 кг</b>
             </td>
             <td>
-              <b>Карбон</b>
+              <b class="features">Карбон</b>
             </td>
           </tr>
         </table>
@@ -152,22 +153,22 @@
 
     <ul class="items-list">
       <li class="items-link">
-        <a href="#" title="Виртуальная реальность">Виртуальная реальность</a>
+        <a class="icons-text" href="#" title="Виртуальная реальность">Виртуальная реальность</a>
       </li>
       <li class="items-link">
-        <a href="catalog.html" title="Моноподы для селфи">Моноподы для селфи</a>
+        <a class="icons-text" href="catalog.html" title="Моноподы для селфи">Моноподы для селфи</a>
       </li>
       <li class="items-link">
-        <a href="#" title="Экшн камеры">Экшн камеры</a>
+        <a class="icons-text" href="#" title="Экшн камеры">Экшн камеры</a>
       </li>
       <li class="items-link">
-        <a href="#" title="Фитнес-браслеты">Фитнес-браслеты</a>
+        <a class="icons-text" href="#" title="Фитнес-браслеты">Фитнес-браслеты</a>
       </li>
       <li class="items-link">
-        <a href="#" title="Умные часы">Умные часы</a>
+        <a class="icons-text" href="#" title="Умные часы">Умные часы</a>
       </li>
       <li class="items-link">
-        <a href="#" title="Квадрокоптеры">Квадрокоптеры</a>
+        <a class="icons-text" href="#" title="Квадрокоптеры">Квадрокоптеры</a>
       </li>
     </ul>
 
@@ -208,8 +209,8 @@
     </section>
     <section class="about">
       <h3 class="about-title">О нас</h3>
-      <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас. </p>
-      <p>Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:</p>
+      <p class="title-text">Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас. </p>
+      <p class="title-text">Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:</p>
       <ul class="partners">
         <li class="partners-list">Меловые линии</li>
         <li class="partners-list">СДИК</li>
@@ -220,7 +221,7 @@
 
     <section class="contacts">
       <h3 class="contacts-title">Контакты</h3>
-      <p>Вы можете забрать товар сами, заехав в наш офис.
+      <p class="title-text">Вы можете забрать товар сами, заехав в наш офис.
         Заодно сможете проверить работоспособность покупки. </p>
       <h4 class="contacts-subtitle">Интернет-магазин «Девайс»</h4>
       <address class="contacts-address">

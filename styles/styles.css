@@ -22,13 +22,25 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+} 
+
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
   color: #000;
   background-color: #fff;
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 .search-button::placeholder {
@@ -219,9 +231,30 @@ body {
   line-height: 30px;
 }
 
+
 .main-footer {
   background-color: #444444;
   color: #fff;
+}
+
+.page-footer-container {
+  display: flex;
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.footer-contacts {
+  width: 239px;
+  margin-right: 119px;
+}
+
+.links-set {
+  width: 444px;
+  margin-right: 183px;
+}
+
+.reference {
+  width: 145px;
 }
 
 .footer-navigation-link {

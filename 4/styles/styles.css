@@ -24,6 +24,7 @@
 
 body {
   font-family: "Rubik", sans-serif;
+  font-weight: 400;
   font-size: 18px;
   line-height: 30px;
   color: #000;
@@ -31,7 +32,7 @@ body {
 }
 
 .search-button::placeholder {
-  font-weight: 400;
+  font-family: inherit;
   color: #000;
   font-size: 16px;
   line-height: 20px;
@@ -43,13 +44,11 @@ body {
 }
 
 .submit {
-  font-weight: 400;
   font-size: 16px;
   line-height: 20px;
 }
 
 .menu-link {
-  font-weight: 400;
   text-decoration: none;
   color: #000;
 }
@@ -66,7 +65,6 @@ body {
 }
 
 .catalog-text {
-  font-weight: 400;
   color: #000;
   text-decoration: none;
 }
@@ -102,13 +100,12 @@ body {
 }
 
 .features {
-  font-weight: 400;
+  font-weight: inherit;
   font-size: 36px;
   line-height: 30px;
 }
 
 .features-text {
-  font-weight: 400;
   font-size: 16px;
   line-height: 30px;
   color: #444444;
@@ -142,16 +139,38 @@ body {
   background-color: #F0F0F0;
 }
 
-.about,
-.contacts,
-.services-text,
-.subtitle,
-.mailing,
+.about {
+  color: #444444;
+}
+
+.contacts {
+  color: #444444;
+}
+
+.services-text {
+  color: #444444;
+}
+
+.subtitle {
+  color: #444444;
+}
+
+.mailing {
+  color: #444444;
+}
+
 .mailing-free {
   color: #444444;
 }
 
-.about-title,
+.about-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 50px;
+  color: #000;
+}
+
 .contacts-title {
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
@@ -175,12 +194,10 @@ body {
 }
 
 .contacts-address-text {
-  font-weight: 400;
   font-style: normal;
 }
 
 .contacts-phone {
-  font-weight: 400;
   font-style: normal;
   color: #444444;
 }
@@ -189,7 +206,7 @@ body {
   background-color: #F0F0F0;
 }
 
-.page-footer-title {
+.newsletter-title {
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 50px;
@@ -197,8 +214,9 @@ body {
 }
 
 .field::placeholder {
-  font-weight: 400;
   color: #000;
+  font-size: 18px;
+  line-height: 30px;
 }
 
 .main-footer {
@@ -223,14 +241,12 @@ body {
 }
 
 .footer-contacts-address {
-  font-weight: 400;
   font-style: normal;
   font-size: 16px;
   line-height: 20px
 }
 
 .footer-contacts-phone {
-  font-weight: 400;
   font-style: normal;
   font-size: 16px;
   line-height: 20px;
@@ -246,20 +262,32 @@ body {
 }
 
 .tree-link {
-  font-weight: 400;
   font-size: 16px;
   line-height: 19px;
   text-decoration: none;
   color: #000;
 }
 
-.catalog-container,
+.catalog-container {
+  color: #000;
+  background-color: #F0F0F0;
+}
+
 .sorting {
   color: #000;
   background-color: #F0F0F0;
 }
 
-.filter,
+.filter {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
 .sorting {
   font-family: 'Raleway', sans-serif;
   font-style: normal;
@@ -270,7 +298,13 @@ body {
   text-transform: uppercase;
 }
 
-.color-sorting,
+.color-sorting {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+
 .bluetooth-option {
   font-weight: 700;
   font-size: 18px;
@@ -279,17 +313,14 @@ body {
 }
 
 .control {
-  font-weight: 400;
   font-size: 16px;
   line-height: 19px;
 }
 
 .select-control {
   color: #000000;
-  font-weight: 400;
   font-size: 18px;
   line-height: 30px;
-
 }
 
 .product-card-title {
@@ -305,7 +336,6 @@ body {
 }
 
 .product-card-price {
-  font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   color: #444444;
@@ -314,7 +344,6 @@ body {
 .pagination-link {
   text-decoration: none;
   color: #000;
-  font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   color: #444444;
@@ -325,7 +354,17 @@ body {
   color: #000;
 }
 
-.previous-page,
+.previous-page {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #000;
+}
+
 .next-page {
   font-family: 'Raleway', sans-serif;
   font-style: normal;

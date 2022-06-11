@@ -153,6 +153,8 @@ body {
   display: flex;
   margin: 0 auto;
 }
+
+
 .sliders {
   width: 1160px;
   display: flex;
@@ -402,6 +404,11 @@ body {
   color: #FFFFFF;
 }
 
+.inner-container {
+  width: 1160px;
+  margin: 0 auto;
+}
+
 .inner-header {
   width: 1079px;
   margin-left: 63px;
@@ -429,6 +436,11 @@ body {
 
 .catalog-products {
   display: flex;
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.main-background {
   color: #000;
   background-color: #F0F0F0;
 }

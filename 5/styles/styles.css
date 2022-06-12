@@ -133,11 +133,6 @@ body {
   color: #000;
   text-decoration: none;
 }
-/*
-.page-container {
-  width: 1160px;
-  margin: 0 auto;
-} */
 
 .number-text {
   font-weight: 700;
@@ -150,7 +145,6 @@ body {
 
 .icons-catalog-list {
   width: 1160px;
-  display: flex;
   margin: 0 auto;
 }
 
@@ -247,9 +241,6 @@ body {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   background-color: #F0F0F0;
-}
-
-.rare-delivery {
   width: 1160px;
   margin: 0 auto;
 }

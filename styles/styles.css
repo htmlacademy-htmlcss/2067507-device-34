@@ -286,7 +286,6 @@ body {
   text-align: center;
   color: #000000;
   text-decoration: none;
-  height: 40px;
 }
 
 .features {
@@ -534,7 +533,6 @@ body {
   border: 5px solid #dcdcdc;
   border-bottom: none;
   padding: 18px 39px;
-  height: 57px;
 }
 
 .field::placeholder {
@@ -904,7 +902,7 @@ body {
   height: 40px;
 }
 
-.logo-h {
+.logo-htmlacademy {
   margin-bottom: 65px;
 }
 

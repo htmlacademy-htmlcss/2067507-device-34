@@ -57,6 +57,19 @@ body {
   margin-bottom: 30px;
 }
 
+.logo:hover {
+   opacity: 0.6;
+}
+
+.logo:active {
+  opacity: 0.3;
+}
+
+
+.navigation-logo:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 .main-container {
   flex-grow: 1;
   padding-top: 0;
@@ -76,7 +89,12 @@ body {
   padding-left: 48px;
   border-radius: 20px 0px 0px 20px;
   border: 2px solid;
+  border-right: 2px solid;
   background-color: #ffe17f00;
+}
+
+.search-button:focus {
+    outline: 2px solid #AF4FFF;
 }
 
 .search-button::placeholder {
@@ -100,6 +118,7 @@ body {
   margin: 0 auto;
   margin-top: 15px;
   width: 1160px;
+  padding-bottom: 38px;
 }
 
 .submit {
@@ -111,6 +130,23 @@ body {
   border: 2px solid;
   border-left: none;
   border-radius: 0px 20px 20px 0px;
+}
+
+.submit:hover {
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+.submit:active {
+  background-color: #000;
+  color: rgba(255, 255, 255, 0.300);
+  border: none;
+}
+
+/*Как сделать фокус квадратной рамочкой, а не как у меня по бордеру?*/
+.submit:focus {
+  outline: 2px solid #AF4FFF;
 }
 
 .menu-container {
@@ -140,6 +176,18 @@ body {
   background-repeat: no-repeat;
   background-position: left;
   padding-left: 27px;
+}
+
+.menu-link:hover {
+  opacity: 0.6;
+}
+
+.menu-link:active {
+  opacity: 0.3;
+}
+
+.menu-link:focus {
+  outline: 2px solid #AF4FFF;
 }
 
 .compare {
@@ -203,7 +251,7 @@ body {
 
 .catalog-container {
   box-sizing: border-box;
-  width: 260px;
+  width: 320px;
   padding-left: 60px;
 }
 
@@ -273,11 +321,37 @@ body {
   color: #000;
 }
 
+.navigation-link:hover {
+  opacity: 0.6;
+}
+
+.navigation-link:active {
+  opacity: 0.3;
+}
+
+.navigation-link:focus {
+  outline: 2px solid #AF4FFF;
+}
+
+
 .catalog-text {
   display: block;
   color: #000;
   text-decoration: none;
 }
+
+.catalog-text:hover {
+  opacity: 0.6;
+}
+
+.catalog-text:active {
+  opacity: 0.3;
+}
+
+.catalog-text:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 
 .number-container {
   width: 1160px;
@@ -312,6 +386,18 @@ body {
   width: 160px;
 }
 
+.icons-link:hover .svg-container {
+   background-color: #ffc700;
+}
+
+.icons-link:active {
+  opacity: 0.3;
+}
+
+.icons-link:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 .icons-block {
    left: 50%;
 
@@ -332,7 +418,6 @@ body {
   background-color: #ffe17f;
   height: 160px;
   margin-bottom: 32px;
-
 }
 
 .sliders {
@@ -382,6 +467,81 @@ body {
   color: #000000;
   text-decoration: none;
 }
+
+.details {
+  box-sizing: border-box;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+  padding-top: 10px;
+  padding-bottom: 9px;
+  z-index: 2;
+  padding-left: 37px;
+  padding-right: 37px;
+}
+
+.details::before {
+  content: " ";
+  position: absolute;
+  width: 220px;
+  height: 8px;
+  left: 0px;
+  top: 16px;
+  background-color: #ffe17f;
+  z-index: -1;
+}
+
+
+.details:focus {
+  outline: 2px solid #AF4FFF;
+}
+
+.button-slider {
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  padding-top: 10px;
+  padding-bottom: 9px;
+  width: 160px;
+  z-index: 2;
+}
+
+.button-slider::before {
+  content: " ";
+  position: absolute;
+  width: 160px;
+  height: 8px;
+  left: 0px;
+  top: 15px;
+  background-color: #ffe17f;
+  z-index: -1;
+}
+
+.button-slider:hover {
+  background-color: #ffe17f;
+}
+
+
+.button-slider:active::before {
+  content: " ";
+  position: absolute;
+  width: 160px;
+  height: 8px;
+  left: 0px;
+  top: 15px;
+  background-color: #ffc700;
+  z-index: -1;
+}
+
+.button-slider:active {
+  background-color: #ffc700;
+}
+
+
+.button-slider:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 
 .features {
   font-weight: inherit;
@@ -439,6 +599,16 @@ body {
   margin-bottom: 65px;
   margin-top: 64px;
   list-style-type: none;
+  position: relative;
+}
+
+.services-buttons::after {
+  position: absolute;
+  content: '';
+  border-right: 7px solid #000;
+  height: 319px;
+  left: 280px;
+  top: 0;
 }
 
 .button-services {
@@ -448,6 +618,103 @@ body {
 .button-services:last-child {
   margin-bottom: 0px;
 }
+
+
+
+.button-feedback {
+  box-sizing: border-box;
+  position: relative;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 259px;
+  z-index: 2;
+}
+
+
+.button-feedback::before {
+  content: " ";
+  position: absolute;
+  width: 259px;
+  height: 8px;
+  left: 0px;
+  top: 16px;
+  background-color: #ffe17f;
+  z-index: -1;
+}
+
+
+.button-feedback:hover {
+  background-color: #ffe17f;
+}
+
+.button-feedback:active{
+  background-color: #ffc700;
+}
+
+
+.button-feedback:active::before {
+  content: " ";
+  position: absolute;
+  width: 259px;
+  height: 8px;
+  left: 0px;
+  top: 16px;
+  background-color: #FFC700;
+  z-index: -1;
+}
+
+.button-feedback:focus {
+  outline: 2px solid #AF4FFF;
+}
+
+
+.button-about {
+  box-sizing: border-box;
+  position: relative;
+  padding-right: 22px;
+  padding-left: 22px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+
+.button-about::before {
+  content: " ";
+  position: absolute;
+  width: 270px;
+  height: 8px;
+  left: 0px;
+  top: 16px;
+  background-color: #ffe17f;
+  z-index: -1;
+}
+
+
+.button-about:hover {
+  background-color: #ffe17f;
+}
+
+.button-about:active {
+  background-color: #ffc700;
+}
+
+.button-about:active::before {
+  content: " ";
+  position: absolute;
+  width: 270px;
+  height: 8px;
+  left: 0px;
+  top: 16px;
+  background-color: #FFC700;
+  z-index: -1;
+}
+
+.button-about:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 
 .services-list {
   padding: 0;
@@ -516,6 +783,18 @@ body {
   border: none;
 }
 
+.delivery-order:hover .delivery-truck-wrapper {
+  background-color: #ffc700;
+}
+
+.delivery-order:active {
+  opacity: 0.3;
+}
+
+.delivery-order:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 .about-container {
   width: 1160px;
   display: flex;
@@ -574,10 +853,12 @@ body {
 .field {
   box-sizing: border-box;
   width: 557px;
-  height: 55px;
   background-color: #F0F0F0;
   border: 0;
+  height: 57px;
   padding: 0;
+  border-bottom: 3px solid #C4C4C4;
+  padding-left: 16px;
 }
 
 .about-title {
@@ -615,7 +896,8 @@ body {
 .partners {
   margin-top: 0;
   margin-bottom: 30px;
-  padding-left: 20px;
+  padding: 0;
+
 }
 
 .partners-list {
@@ -625,6 +907,21 @@ body {
   letter-spacing: -0.02em;
   color: #000000;
   margin-bottom: 19px;
+  padding-left: 37px;
+  list-style-type: none;
+}
+
+.partners-list::before {
+  display: inline-block;
+  position: relative;
+  content: " ";
+  border-radius: 50%;
+  border: 4px solid #ffc700;
+  left: -34px;
+  top: -2px;
+
+
+
 }
 
 .contacts-address-text {
@@ -634,10 +931,14 @@ body {
 }
 
 .contacts-phone {
-  display: block;
+  display: inline-block;
   font-style: normal;
   color: #444444;
   margin-bottom: 30px;
+}
+
+.contacts-phone:focus {
+  outline: 2px solid #AF4FFF;
 }
 
 .newsletter {
@@ -659,25 +960,53 @@ body {
   line-height: 50px;
   width: 348px;
   margin-top: 64px;
+  margin-bottom: 144px;
 }
 
 .newsletter-form {
   display: flex;
   margin-bottom: 56px;
-  border-bottom: 5px solid #dcdcdc;
 }
 
 .newsletter-button {
-  box-sizing: border-box;
-  border: 5px solid #dcdcdc;
-  border-bottom: none;
-  padding: 18px 39px;
+  border: 3px solid #C4C4C4;
+  padding-left: 34px;
+  padding-right: 34px;
+  height: 57px;
+  cursor: pointer;
 }
 
+.newsletter-button:hover {
+  background-color: #000;
+  color: white;
+  border: #000;
+}
+
+.newsletter-button:active {
+  background-color: #000;
+  color: rgba(255, 255, 255, 0.300);
+  border: #000;
+}
+
+.newsletter-button:focus {
+  outline: 2px solid #AF4FFF;
+}
+
+/* добавить состояние введенного текста и ошибки */
 .field::placeholder {
-  color: #000;
+  color: #444444;
+  opacity: 0.5;
   font-size: 18px;
   line-height: 30px;
+}
+
+.field:active {
+   outline: none;
+}
+
+.field:focus {
+  outline: none;
+  background-color: #DCDCDC;
 }
 
 .main-footer {
@@ -696,6 +1025,7 @@ body {
   margin-right: 119px;
   margin-top: 62px;
 }
+
 
 .footer-navigation-list {
   display: flex;
@@ -717,20 +1047,88 @@ body {
 }
 
 .footer-social-item {
+  display: flex;
   width: 40px;
   height: 40px;
   margin-right: 15px;
   margin-bottom: 15px;
 }
 
-.html-academy-link {
-  position: relative;
-  fill: #ffc700;
-  right: -60px;
+.htmlacademy-link {
+  display: inline-block;
 }
+.logo-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.html-academy-link {
+  fill: #ffc700;
+
+}
+
+.htmlacademy-link:hover .html-academy-link {
+  fill: #fff;
+}
+
+.htmlacademy-link:active .html-academy-link{
+  fill: #fff;
+  fill-opacity: 0.3;
+}
+
+.htmlacademy-link:focus {
+  outline: 2px solid #AF4FFF;
+}
+
+
+.htmlacademy {
+  display: inline-block;
+  position: relative;
+}
+
+.social-icons {
+  position: relative;
+  z-index: 2;
+  fill: #444;
+}
+
+.htmlacademy::before {
+  content: " ";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.3;
+  left: 0;
+  z-index: 1;
+}
+
+.htmlacademy:hover::before {
+  background-color: #ffc700;
+  opacity: 1;
+}
+
+.htmlacademy:active::before {
+  background-color: #ffc700;
+  opacity: 1;
+}
+
+.htmlacademy:active .social-icons {
+  opacity: 0.3;
+}
+
+.htmlacademy:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 
 .footer-social-item:nth-child(3) {
   margin-right: 0;
+}
+
+.footer-logo {
+  fill:#ffc700;
 }
 
 .footer-navigation {
@@ -746,8 +1144,21 @@ body {
 }
 
 .logo-footer {
-  display: block;
-  margin-bottom: 35px;
+  display: inline-block;
+  margin-bottom: 34px;
+}
+
+.logo-footer:hover .footer-logo {
+  opacity: 0.6;
+}
+
+.logo-footer:active .footer-logo {
+  opacity: 0.3;
+}
+
+.logo-footer:focus {
+  fill: #ffc700;
+  outline: 2px solid #AF4FFF;
 }
 
 .footer-navigation-link {
@@ -760,23 +1171,39 @@ body {
   text-transform: uppercase;
   color: #FFFFFF;
   text-decoration: none;
+  margin: 0 auto;
 }
 
-/* Пока решила не делать с ними ничего, все равно потом будут тут иконки */
-.htmlacademy {
-  display: block;
-  color: #fff;
+
+.footer-navigation-link:hover {
+  color: #ffc700;
 }
 
-.htmlacademy-link {
-  display: block;
+.footer-navigation-link:active {
+  color: #FFC700;
+  opacity: 0.3;
 }
+
+.footer-navigation-link:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 
 .footer-contacts-address {
   font-style: normal;
   font-size: 16px;
-  line-height: 20px
+  line-height: 20px;
+  margin-bottom: 64px;
 }
+
+
+.footer-contacts::after {
+  content: "";
+  border-top: 7px solid #ffc700;
+  padding-left: 80px;
+}
+
+
 
 .footer-contacts-phone {
   display: block;
@@ -787,6 +1214,18 @@ body {
   margin-bottom: 63px;
 }
 
+.footer-contacts-phone:hover {
+  color: #ffc700;
+}
+
+.footer-contacts-phone:active {
+  color: #FFC700;
+  opacity: 0.3;
+}
+
+.footer-contacts-phone:focus {
+  outline: 2px solid #AF4FFF;
+}
 
 .footer-contacts-tel {
   justify-content: flex-end;
@@ -821,6 +1260,18 @@ body {
   color: #000;
 }
 
+.tree-link:hover {
+  opacity: 0.6;
+}
+
+.tree-link:active {
+  opacity: 0.3;
+}
+/*не работает фокус на последнем элементе, не понимаю почему*/
+.tree-link:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 .tree {
   display: flex;
   flex-wrap: wrap;
@@ -830,8 +1281,26 @@ body {
   margin-bottom: 35px;
 }
 
+.tree-item:first-child::before {
+  position: absolute;
+  content: url("../images/breadcrumbs.svg");
+  left: 79px;
+  top: -9px;
+  opacity: 0.2;
+}
+
+.tree-item:nth-child(2)::before {
+  position: absolute;
+  content: url("../images/breadcrumbs.svg");
+  left: 145px;
+  top: -9px;
+  opacity: 0.2;
+}
+
+
 .tree-item {
   margin-right: 36px;
+position: relative;
 }
 
 .tree-item:last-child {
@@ -892,6 +1361,57 @@ body {
   margin-bottom: 25px;
 }
 
+
+.button-show {
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  background-color: #ffffff00;
+  padding-top: 10px;
+  padding-left: 47px;
+  padding-right: 47px;
+  padding-bottom: 9px;
+  width: 220px;
+  z-index: 2;
+
+}
+
+
+.button-show::before {
+   content: " ";
+   position: absolute;
+   width: 220px;
+   height: 8px;
+   left: 0px;
+   top: 15px;
+   background-color: #ffe17f;
+   z-index: -1;
+}
+
+.button-show:hover {
+  background-color: #ffe17f;
+}
+
+
+.button-show:active::before {
+  content: " ";
+  position: absolute;
+  width: 220px;
+  height: 8px;
+  left: 0px;
+  top: 15px;
+  background-color: #FFC700;
+  z-index: -1;
+}
+
+.button-show:active {
+  background-color: #ffc700;
+}
+
+.button-show:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 .sorting {
   font-family: 'Raleway', sans-serif;
   font-style: normal;
@@ -938,6 +1458,20 @@ body {
   margin-right: 206px;
   background-color: #F0F0F0;
   border: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.select-control:hover {
+  opacity: 0.6;
+}
+
+.select-control:active {
+  opacity: 0.3;
+}
+
+.select-control:focus {
+  outline: 2px solid #AF4FFF;
 }
 
 .product-card-title {
@@ -967,6 +1501,47 @@ body {
 .product-card-link {
   text-decoration: none;
   color: #000;
+  position: relative;
+}
+
+/* не понимаю как вообще здесь сделать состояния, потому что если я делаю opacity то и текст тоже становится прозрачным, вможет здесь вообще какой-то друго способ нужен?*/
+.product-card-link:hover {
+  opacity: 0.6;
+}
+
+.product-card-link:hover.product-card-link::before {
+  position: absolute;
+  content: "Подробнее";
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  width: 360px;
+  height: 452px;
+  left: 0;
+  top: 174px;
+  z-index: 2;
+
+}
+
+.product-card-link:hover.product-card-link::after {
+  position: absolute;
+  content: "";
+  width: 220px;
+  height: 8px;
+  left: 70px;
+  top: 180px;
+  background-color: #ffe17f;
+  z-index: 1;
+}
+
+.product-card-link:focus {
+  outline: 2px solid #AF4FFF;
 }
 
 .product-card {
@@ -999,6 +1574,19 @@ body {
   flex-grow: 1;
 }
 
+.page-number {
+  opacity: 0.3;
+}
+
+.pagination-link:hover .page-number {
+  opacity: 1;
+}
+
+.pagination-link:active .page-number {
+  opacity: 0.1;
+}
+
+
 .pagination-item {
   margin-top: 15px;
 }
@@ -1028,10 +1616,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 5px solid;
+  border: 3px solid;
   border-color: #dcdcdc;
   flex-grow: 1;
   padding: 18px 0;
+  background-color: #fff;
+}
+
+.pagination-show-more:hover {
+  border-color: #000;
+
+}
+
+
+.pagination-show-more:active {
+  border-color: #000;
+  opacity: 0.3;
+}
+
+
+.pagination-show-more:focus {
+  outline: 2px solid #AF4FFF;
+
 }
 
 .pagination-item:not(:first-child, :last-child) {
@@ -1063,6 +1669,17 @@ body {
   padding: 25px;
 }
 
+
+.pagination-prev:hover {
+   background-color: #DCDCDC;
+}
+
+
+.pagination-prev:active .previous-page {
+  background-color: #DCDCDC;
+   opacity: 0.3;
+}
+
 .next-page {
   font-family: 'Raleway', sans-serif;
   font-style: normal;
@@ -1075,6 +1692,16 @@ body {
   padding: 25px;
   margin: 0;
 }
+
+.pagination-next:hover {
+  background-color: #DCDCDC;
+}
+
+
+.pagination-next:active .next-page {
+  opacity: 0.3;
+}
+
 
 .pagination-link:not(:first-child, :last-child) {
   width: 40px;
@@ -1096,4 +1723,42 @@ body {
   padding: 0;
   margin-top: 20px;
   margin-left: auto;
+
 }
+
+.arrows-icons {
+  opacity: 0.3;
+}
+
+.arrows:hover .arrows-icons {
+  opacity: 0.5;
+}
+
+
+.arrows:active .arrows-icons {
+  opacity: 1;
+}
+
+
+.arrows:focus {
+  outline: 2px solid #AF4FFF;
+}
+
+.arrows:first-of-type .arrows-icons{
+  transform: rotate(180deg);
+}
+
+
+.pagination-link:hover .page-number {
+  opacity: 1;
+}
+
+.pagination-link:active .page-number {
+  opacity: 0.1;
+}
+
+/* фокус при табе начинается с 3 элемента в строке, не понимаю как это убрать? */
+.pagination-link:focus {
+  outline: 2px solid #AF4FFF;
+}
+

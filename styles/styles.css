@@ -1240,7 +1240,6 @@ body {
   opacity: 0.3;
 }
 
-/*не работает фокус на последнем элементе, не понимаю почему*/
 .tree-link:focus {
   outline: 2px solid #AF4FFF;
 }
@@ -1711,7 +1710,6 @@ body {
   opacity: 0.1;
 }
 
-/* фокус при табе начинается с 3 элемента в строке, не понимаю как это убрать? */
 .pagination-link:focus {
   outline: 2px solid #AF4FFF;
 }

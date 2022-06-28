@@ -82,6 +82,7 @@ body {
 }
 
 .search-button {
+  box-sizing: border-box;
   background-image: url("../images/search-icon.svg");
   background-repeat: no-repeat;
   background-position: 16px center;
@@ -94,6 +95,11 @@ body {
 
 .search-button:focus {
   outline: 2px solid #AF4FFF;
+}
+
+.search-button:disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .search-button::placeholder {
@@ -143,9 +149,16 @@ body {
   border: none;
 }
 
-/*Как сделать фокус квадратной рамочкой, а не как у меня по бордеру?*/
+/*Как сделать фокус квадратной рамочкой, а не как у меня по бордеру?
+Update
+Сделать рамку при помощи box shadow не получилось, какие еще есть варианты?*/
 .submit:focus {
   outline: 2px solid #AF4FFF;
+}
+
+.submit:disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .menu-container {
@@ -384,7 +397,27 @@ body {
   width: 160px;
 }
 
-.icons-link:hover .svg-container {
+.items-link:first-child:hover .icons-link::before {
+  background-color: #ffc700;
+}
+
+.items-link:nth-child(2):hover .icons-link::before {
+  background-color: #ffc700;
+}
+
+.items-link:nth-child(3):hover .icons-link::before {
+  background-color: #ffc700;
+}
+
+.items-link:nth-child(4):hover .icons-link::before {
+  background-color: #ffc700;
+}
+
+.items-link:nth-child(5):hover .icons-link::before {
+  background-color: #ffc700;
+}
+
+.items-link:nth-child(6):hover .icons-link::before {
   background-color: #ffc700;
 }
 
@@ -396,25 +429,12 @@ body {
   outline: 2px solid #AF4FFF;
 }
 
-.icons-block {
-  left: 50%;
-}
-
 .icons-link {
   display: block;
 }
 
 .icons-text {
   margin: 0;
-}
-
-.svg-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffe17f;
-  height: 160px;
-  margin-bottom: 32px;
 }
 
 .sliders {
@@ -469,11 +489,13 @@ body {
   box-sizing: border-box;
   position: relative;
   background-color: rgba(255, 255, 255, 0);
-  padding-top: 10px;
+  padding-top: 9px;
   padding-bottom: 9px;
   z-index: 2;
-  padding-left: 37px;
-  padding-right: 37px;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 220px;
+  border: none;
 }
 
 .details::before {
@@ -487,8 +509,32 @@ body {
   z-index: -1;
 }
 
+.details:hover {
+  background-color: #ffe17f;
+}
+
+.details:active::before {
+  content: " ";
+  position: absolute;
+  width: 220px;
+  height: 8px;
+  left: 0px;
+  top: 16px;
+  background-color: #ffc700;
+  z-index: -1;
+}
+
+.details:active {
+  background-color: #FFC700;
+}
+
 .details:focus {
   outline: 2px solid #AF4FFF;
+}
+
+.details:disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .button-slider {
@@ -536,6 +582,34 @@ body {
   outline: 2px solid #AF4FFF;
 }
 
+.current-button {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #000;
+  color: #ffe17f;
+  width: 280px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 9px;
+  z-index: 1;
+}
+
+.current-button:hover .inside-text {
+  opacity: 0.5;
+}
+
+.current-button:active .inside-text {
+  opacity: 0.3;
+}
+
+.inside-text {
+  padding-left: 12px;
+}
+
+.current-button:focus {
+  outline: 2px solid #AF4FFF;
+}
+
 .features {
   font-weight: inherit;
   font-size: 36px;
@@ -577,6 +651,84 @@ body {
   color: #000;
 }
 
+.items-link:first-child .icons-link::before {
+  content: " ";
+  background-image: url(../images/reality-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  height: 160px;
+  width: 160px;
+  background-color: #ffe17f;
+  margin-bottom: 32px;
+}
+
+.items-link:nth-child(2) .icons-link::before {
+  content: " ";
+  background-image: url(../images/selfi-icon.svg);
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  display: block;
+  height: 160px;
+  width: 160px;
+  background-color: #ffe17f;
+  margin-bottom: 32px;
+}
+
+.items-link:nth-child(3) .icons-link::before {
+  content: " ";
+  background-image: url(../images/camera-icon.svg);
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  height: 160px;
+  width: 160px;
+  background-color: #ffe17f;
+  margin-bottom: 32px;
+}
+
+.items-link:nth-child(5) .icons-link::before {
+  content: " ";
+  background-image: url(../images/watch-icon.svg);
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  height: 160px;
+  width: 160px;
+  background-color: #ffe17f;
+  margin-bottom: 32px;
+}
+
+.items-link:nth-child(4) .icons-link::before {
+  content: " ";
+  background-image: url(../images/braclets-icon.svg);
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  height: 160px;
+  width: 160px;
+  background-color: #ffe17f;
+  margin-bottom: 32px;
+}
+
+.items-link:nth-child(6) .icons-link::before {
+  content: " ";
+  background-image: url(../images/copter-icon.svg);
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  height: 160px;
+  width: 160px;
+  background-color: #ffe17f;
+  margin-bottom: 32px;
+}
+
+
 .services-options {
   display: flex;
   width: 1160px;
@@ -601,7 +753,8 @@ body {
   border-right: 7px solid #000;
   height: 319px;
   left: 280px;
-  top: 0;
+  top: -64px;
+  z-index: -1;
 }
 
 .button-services {
@@ -708,7 +861,7 @@ body {
 
 .services-title {
   margin: 0;
-  margin-bottom: 32px;
+  margin-bottom: 34px;
   font-family: 'Raleway';
   font-weight: 800;
   font-size: 50px;
@@ -720,6 +873,7 @@ body {
   background-repeat: no-repeat;
   background-position: right center;
   width: 694px;
+  margin-top: 72px;
 }
 
 .guarantee {
@@ -808,6 +962,7 @@ body {
   width: 452px;
   margin: 0;
   color: #444444;
+  margin-bottom: 73px;
 }
 
 .subtitle {
@@ -838,7 +993,8 @@ body {
   width: 557px;
   background-color: #F0F0F0;
   border: 0;
-  height: 57px;
+  /*можно ли тут оставить высоту?*/
+  height: 61px;
   padding: 0;
   border-bottom: 3px solid #C4C4C4;
   padding-left: 16px;
@@ -951,7 +1107,6 @@ body {
   border: 3px solid #C4C4C4;
   padding-left: 34px;
   padding-right: 34px;
-  height: 57px;
   cursor: pointer;
 }
 
@@ -971,6 +1126,11 @@ body {
   outline: 2px solid #AF4FFF;
 }
 
+.newsletter-button:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 /* добавить состояние введенного текста и ошибки */
 .field::placeholder {
   color: #444444;
@@ -988,6 +1148,11 @@ body {
   background-color: #DCDCDC;
 }
 
+.field:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 .main-footer {
   background-color: #444444;
   color: #fff;
@@ -1000,6 +1165,7 @@ body {
 }
 
 .footer-contacts {
+  position: relative;
   width: 239px;
   margin-right: 119px;
   margin-top: 62px;
@@ -1175,6 +1341,7 @@ body {
   content: "";
   border-top: 7px solid #ffc700;
   padding-left: 80px;
+  position: absolute;
 }
 
 .footer-contacts-phone {
@@ -1379,6 +1546,11 @@ body {
   outline: 2px solid #AF4FFF;
 }
 
+.button-show:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 .sorting {
   font-family: 'Raleway', sans-serif;
   font-style: normal;
@@ -1441,6 +1613,11 @@ body {
   outline: 2px solid #AF4FFF;
 }
 
+.select-control:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 .product-card-title {
   font-weight: 700;
   font-size: 18px;
@@ -1471,39 +1648,60 @@ body {
   position: relative;
 }
 
-/* не понимаю как вообще здесь сделать состояния, потому что если я делаю opacity то и текст тоже становится прозрачным, вможет здесь вообще какой-то друго способ нужен?*/
-.product-card-link:hover {
+.card-info {
+  position: absolute;
+  display: none;
+  left: 100px;
+  top: 180px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.product-card-link::before {
+  content: " ";
+  position: absolute;
+  width: 160px;
+  height: 8px;
+  left: 98px;
+  top: 186px;
+  background-color: #ffe17f;
+  display: none;
+}
+
+.product-card-link:hover .product-card-title {
   opacity: 0.6;
 }
 
-.product-card-link:hover.product-card-link::before {
-  position: absolute;
-  content: "Подробнее";
-  font-family: 'Raleway', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #000000;
-  text-decoration: none;
-  width: 360px;
-  height: 452px;
-  left: 0;
-  top: 174px;
-  z-index: 2;
+.product-card-link:hover .product-card-image {
+  opacity: 0.8;
 }
 
-.product-card-link:hover.product-card-link::after {
-  position: absolute;
-  content: "";
-  width: 220px;
-  height: 8px;
-  left: 70px;
-  top: 180px;
+.product-card-link:hover .card-info {
+  display: initial;
+}
+
+/*Почему-то именно полоска берет себе opacity, а текст нет, такой же черный как и должен быть, где косяк - не вижу*/
+
+.product-card-link:hover.product-card-link::before {
+  display: initial;
   background-color: #ffe17f;
-  z-index: 1;
+}
+
+.product-card-link:active .product-card-title {
+  opacity: 0.3;
+}
+
+.product-card-link:active .product-card-image {
+  opacity: 0.8;
+}
+
+.product-card-link:active .card-info {
+  display: initial;
+}
+
+.product-card-link:active.product-card-link:before {
+  display: initial;
+  background-color: #ffc700;
 }
 
 .product-card-link:focus {
@@ -1566,6 +1764,13 @@ body {
   margin-top: 0;
 }
 
+/*Стиль для текущей страницы
+
+.pagination-current {
+  opacity: 0.6;
+}
+*/
+
 .pagination {
   display: flex;
   margin: 0;
@@ -1599,6 +1804,11 @@ body {
 
 .pagination-show-more:focus {
   outline: 2px solid #AF4FFF;
+}
+
+.pagination-show-more:disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .pagination-item:not(:first-child, :last-child) {

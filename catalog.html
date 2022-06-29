@@ -15,9 +15,12 @@
     </a>
     <nav class="menu-container">
       <form class="menu-searcher" action="https://echo.htmlacademy.ru" method="POST">
-        <!--Правильно ли я поставила подпись для скринридера?-->
-        <input type="search" class="search-button" placeholder="Текст поиска" aria-label="Поисковое окно.">
-        <button type="submit" name="submit" class="submit">Найти
+        <label class="visually-hidden" for="name">Поисковое окно.</label>
+        <div class="search-wrapper">
+          <input type="search" class="search-button" placeholder="Текст поиска" name="search">
+        </div>
+        <button type="submit" name="submit" class="submit">
+          <span class="submit-text">Найти</span>
         </button>
       </form>
       <ul class="menu-list log-in">
@@ -202,7 +205,7 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-1.jpg" width="360" height="380"
                     alt="Любительская селфи-палка">
-                  <button type="button" class="card-info button">Подробнее</button>
+                  <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
                     <h3 class="product-card-title">Любительская <br>селфи-палка</br></h3>
                     <p class="product-card-price">500 ₽</p>
@@ -213,7 +216,7 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-4.jpg" width="360" height="380"
                     alt="Профессиональная селфи-палка">
-                  <button type="button" class="card-info button">Подробнее</button>
+                  <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
                     <h3 class="product-card-title">Профессиональная <br>селфи-палка</br></h3>
                     <p class="product-card-price">1 500 ₽</p>
@@ -224,7 +227,7 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-2.jpg" width="360" height="380"
                     alt="Непотопляемая селфи-палка">
-                  <button type="button" class="card-info button">Подробнее</button>
+                  <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
                     <h3 class="product-card-title">Непотопляемая <br>селфи-палка</br></h3>
                     <p class="product-card-price">2 500 ₽</p>
@@ -235,7 +238,7 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-3.jpg" width="360" height="380"
                     alt="Селфи-палка «Следуй за мной»">
-                  <button type="button" class="card-info button">Подробнее</button>
+                  <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
                     <h3 class="product-card-title">Селфи-палка «Следуй <br>за мной»</br></h3>
                     <p class="product-card-price">1 500 ₽</p>
@@ -248,12 +251,12 @@
             </div>
             <ul class="pagination">
               <li class="pagination-item">
-                <a class="pagination-link pagination-prev pagination-disabled" href="#">
+                <a class="pagination-link pagination-prev" href="#">
                   <p class="previous-page">Назад</p>
                 </a>
               </li>
               <li class="pagination-item">
-                <a class="pagination-link pagination-current" href="#">
+                <a class="pagination-link" href="#">
                   <p class="page-number">1</p>
                 </a>
               </li>

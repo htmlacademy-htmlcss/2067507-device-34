@@ -16,8 +16,13 @@
     </a>
     <nav class="menu-container">
       <form class="menu-searcher" action="https://echo.htmlacademy.ru" method="POST">
-        <input type="search" class="search-button" placeholder="Текст поиска" aria-label="Поисковое окно.">
-        <button type="submit" name="submit" class="submit">Найти</button>
+        <label class="visually-hidden" for="name">Поисковое окно.</label>
+        <div class="search-wrapper">
+          <input type="search" class="search-button" placeholder="Текст поиска" name="search">
+        </div>
+        <button type="submit" name="submit" class="submit">
+          <span class="submit-text">Найти</span>
+        </button>
       </form>
       <ul class="menu-list log-in">
         <li class="menu-item">
@@ -93,8 +98,7 @@
           <p class="subtitle">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под
             стандартную камеру.
           </p>
-          <!--Переделываю на кнопку, тк в стайлгайде у нее есть состояние disabled-->
-          <button class="button details" type="button">Подробнее</button>
+          <a class="button details">Подробнее</a>
           <div class="table">
             <ul class="specification specification-copter">
               <li class="features">800 м</li>
@@ -117,7 +121,7 @@
           <p class="subtitle">Мотивирующие фитнес-браслеты помогут найти в себе силыне пропускать занятия и соблюдать
             диету.
           </p>
-          <button type="button" class="button details">Подробнее</button>
+          <a class="button details">Подробнее</a>
           <div class="table">
             <ul class="specification specification-bracelet">
               <li class="features">48 часов</li>
@@ -136,7 +140,7 @@
           <p class="subtitle">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров
             длиной и весом всего 5 кг.
           </p>
-          <button type="button" class="button details">Подробнее</button>
+          <a class="button details">Подробнее</a>
           <div class="table">
             <ul class="specification specification-selfi">
               <li class="features">8,5 м</li>
@@ -204,12 +208,12 @@
         </li>
         <li class="button-services">
           <button class="button button-slider" type="button">
-            Гарантия
+            <span class="inside-text">Гарантия</span>
           </button>
         </li>
         <li class="button-services">
           <button class="button button-slider" type="button">
-            Кредит
+            <span class="inside-text">Кредит</span>
           </button>
         </li>
       </ul>
@@ -259,7 +263,6 @@
           <li class="partners-list">СДИК</li>
           <li class="partners-list">ТоксБерри</li>
         </ul>
-        <!--Нужно ли для этх псевднокнопок прописывать disabled?-->
         <a class="button button-about" href="#">Подробнее о нас</a>
       </section>
 

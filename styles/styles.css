@@ -51,17 +51,20 @@ body {
 }
 
 .navigation-logo {
-  display: block;
-  margin-left: 60px;
+  display: inline-block;
   width: 145px;
   margin-bottom: 30px;
 }
 
-.logo:hover {
+.logo{
+    display: block;
+ }
+
+.navigation-logo:hover {
   opacity: 0.6;
 }
 
-.logo:active {
+.navigation-logo:active {
   opacity: 0.3;
 }
 
@@ -90,7 +93,6 @@ body {
   padding: 0;
   padding-left: 48px;
   background-color: #ffe17f00;
-  position: relative;
   border: none;
 }
 
@@ -128,11 +130,23 @@ body {
 
 .page-header {
   color: #000;
-  background-color: #ffe17f;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 20px;
+  width: 1040px;
+  background-color: #ff3d3d00;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header::after {
+  position: absolute;
+  content: " ";
   width: 1160px;
-  padding-bottom: 38px;
+  height: 89%;
+  background-color: #ffe17f;
+  left: -60px;
+  top: 20px;
+  z-index: -1;
 }
 
 .submit {
@@ -184,6 +198,7 @@ body {
   width: 1040px;
   margin: 0 auto;
   margin-bottom: 30px;
+  margin-top: -8px;
 }
 
 .menu-item {
@@ -232,6 +247,25 @@ body {
   padding-left: 25px;
 }
 
+.basket-count {
+  position: absolute;
+  display: block;
+  width: 21px;
+  height: 21px ;
+  border-radius: 50%;
+  background-color: #fff;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  left: -17px;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .menu-searcher {
   display: grid;
   grid-template-columns: auto 160px;
@@ -252,6 +286,7 @@ body {
 }
 
 .menu-link {
+  position: relative;
   display: block;
   text-decoration: none;
   color: #000;
@@ -266,9 +301,9 @@ body {
 }
 
 .first-column {
-  display: flex;
-  flex-direction: column;
-  width: 222px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
   margin-right: 20px;
 }
 
@@ -285,22 +320,35 @@ body {
 }
 
 .second-column {
-  display: flex;
-  flex-direction: column;
+  padding: 0;
   width: 211px;
+  margin: 0;
+  list-style-type: none;
 }
 
 .third-column {
-  display: flex;
-  flex-direction: column;
+  padding: 0;
   width: 211px;
+  margin: 0;
+  list-style-type: none;
+}
+.catalog {
+  position: relative;
 }
 
 .catalog-wrapper {
+  box-sizing: border-box;
   padding-top: 33px;
-  width: 1040px;
+  width: 1160px;
   display: flex;
   padding-bottom: 27px;
+  position: absolute;
+  background-color: #ffe17f;
+  z-index: 4;
+  top: 40px;
+  left: -60px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .items-list {
@@ -325,6 +373,10 @@ body {
   width: 471px;
 }
 
+.navigation-item {
+  padding-top: 15px;
+}
+
 .navigation-item:first-child {
   margin-right: 47px;
 }
@@ -334,9 +386,67 @@ body {
 }
 
 .catalog-menu-button {
-  border: none;
+  display: block;
   background-color: #ffe17f00;
+  position: relative;
+  padding-bottom: 14px;
+  padding-top: 15px;
+  z-index: 6;
+
 }
+
+
+.catalog-menu-button::before {
+  position: absolute;
+   content: " ";
+   width: 16px;
+   height: 1px;
+   background-color: #000;
+   opacity: 0.3;
+   right: 17px;
+   top: 50%;
+}
+
+.catalog-menu-button::after {
+  position: absolute;
+   content: " ";
+   width: 16px;
+   height: 1px;
+   z-index: 1;
+   background-color: #000;
+   opacity: 0.3;
+   right: 17px;
+   top: 50%;
+}
+
+.catalog-menu-button::after {
+  transform: rotate(90deg);
+}
+
+.catalog-button:focus-within .catalog-wrapper {
+  display: block;
+}
+
+.catalog-wrapper {
+  display: none;
+}
+
+.button-open {
+   position: absolute;
+   display: block;
+   right: 0;
+   top: 0;
+   height: 50px;
+   width: 50px;
+   background-color: transparent;
+   opacity: 0.3;
+   border: 2px solid #000000;
+   border-radius: 50%;
+   box-sizing: border-box;
+
+}
+
+
 
 .navigation-link {
   display: block;
@@ -347,14 +457,14 @@ body {
   letter-spacing: 0.2em;
   text-decoration: none;
   text-transform: uppercase;
-  color: #000;
+  color: #000
 }
 
-.navigation-link:hover {
+.navigation-link:not(:first-child):hover {
   opacity: 0.6;
 }
 
-.navigation-link:active {
+.navigation-link:not(:first-child):active {
   opacity: 0.3;
 }
 
@@ -366,6 +476,73 @@ body {
   display: block;
   color: #000;
   text-decoration: none;
+}
+
+
+/*Стили для закрытия каталога*/
+.catalog-button:hover .button-close {
+  opacity: 1;
+  }
+
+
+.catalog-button:hover .catalog-menu-button::after{
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.catalog-button:hover .catalog-menu-button::before {
+  opacity: 1;
+}
+
+.catalog-button:active .catalog-menu-button::after{
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.catalog-button:active .catalog-menu-button::before {
+  opacity: 1;
+}
+
+.catalog-button:active.button-close {
+  opacity: 1;
+  }
+
+.catalog-button:focus .catalog-menu-button::after{
+  transform: rotate(180deg);
+}
+
+/* Стили для открытия каталога */
+
+.catalog-button:hover .button-open {
+    opacity: 1;
+  }
+
+.catalog-button:hover .catalog-menu-button::after  {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+.catalog-button:hover .catalog-menu-button::before {
+  opacity: 1;
+}
+
+
+.catalog-button:active .catalog-menu-button::before {
+  opacity: 1;
+}
+
+.catalog-button:active .catalog-menu-button::after  {
+  transform: rotate(90deg);
+opacity: 1;
+}
+
+.catalog-button:active.button-open {
+opacity: 1;
+}
+
+.catalog-menu-button:focus .catalog-menu-button::after {
+  transform: rotate(180deg);
+  outline: 2px solid #AF4FFF;
 }
 
 .catalog-text:hover {
@@ -380,22 +557,26 @@ body {
   outline: 2px solid #AF4FFF;
 }
 
+
 .number-container {
+  position: relative;
   width: 1160px;
   background-color: #ffe17f;
-  padding-top: 29px;
+  padding-top: 135px;
+
 }
 
 .number-text {
-  position: relative;
+  display: block;
+  position: absolute;
   top: 14px;
+  right: 49px;
   box-sizing: border-box;
   font-weight: 700;
   font-size: 180px;
   line-height: 135px;
   text-align: right;
   color: #fff;
-  padding-right: 49px;
   margin: 0;
   margin-left: auto;
 }
@@ -453,6 +634,52 @@ body {
   margin: 0;
 }
 
+.image-buttons-container {
+  position: relative;
+  margin-right: 40px;
+  margin-top: -135px;;
+
+}
+
+.slider-buttons-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 530px;
+  top: 211px;
+  left: 30px;
+}
+
+.slider-button {
+  background-image: url(../images/arrow-slider.svg);
+  height: 60px;
+  width: 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
+.slider-button:hover {
+  opacity: 0.6;
+}
+
+.slider-button:active{
+  opacity: 0.3;
+}
+
+.slider-button:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+.slider-button:disabled {
+   opacity: 0.1;
+}
+
+.slider-next {
+  transform: rotate(180deg);
+}
+
 .sliders {
   width: 1160px;
   display: flex;
@@ -460,10 +687,14 @@ body {
   margin: 0 auto;
   margin-bottom: 70px;
   padding: 0;
+  position: relative;
+  padding-bottom: -38px;
+  z-index: 1;
+
 }
 
 .slider-image {
-  margin-right: 40px;
+  display: block;
 }
 
 .sliders-content {
@@ -472,11 +703,14 @@ body {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  z-index: 2;
 }
 
 .sliders-text-container {
-  margin-top: 121px;
+  margin-top: -30px;
   width: 560px;
+  right: 0;
+  z-index: 3;
 }
 
 .sliders-header {
@@ -501,6 +735,89 @@ body {
   text-decoration: none;
 }
 
+.slider-interactive {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-pagination {
+  display: grid;
+  grid-template-columns: 12px 12px 12px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.slider-pagination-item {
+  display: flex;
+}
+
+.slider-pagination-button {
+  height: 12px;
+  width: 12px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  align-self: center;
+  position: relative;
+
+}
+
+.slider-pagination-button::after {
+  position: absolute;
+  content: " ";
+  height: 12px;
+  width: 12px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+}
+
+.slider-pagination-button:hover {
+  opacity: 0.6;
+}
+
+.slider-pagination-button:active {
+  opacity: 0.3;
+}
+
+.slider-pagination-button:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+
+.current-slider::after {
+  position: absolute;
+  content: " ";
+  height: 12px;
+  width: 12px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background-color: #000000;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+}
+
+
+
+.current-slider:hover {
+  opacity: 0.6;
+}
+
+.current-slider:active {
+  opacity: 0.3;
+}
+
+.current-slider:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
 .details {
   display: block;
   box-sizing: border-box;
@@ -518,10 +835,11 @@ body {
 .details::before {
   content: " ";
   position: absolute;
-  width: 220px;
+  width: 100%;
   height: 8px;
   left: 0px;
-  top: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #ffe17f;
   z-index: -1;
 }
@@ -568,10 +886,11 @@ body {
 .button-slider::before {
   content: " ";
   position: absolute;
-  width: 160px;
+  width: 100%;
   height: 8px;
   left: 0px;
-  top: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #ffe17f;
   z-index: -1;
 }
@@ -609,6 +928,7 @@ body {
   padding-top: 10px;
   padding-bottom: 9px;
   z-index: 1;
+  justify-content: flex-start;
 }
 
 .current-button:hover .inside-text {
@@ -620,7 +940,7 @@ body {
 }
 
 .inside-text {
-  padding-left: 12px;
+   width: 160px;
 }
 
 .current-button:focus {
@@ -782,12 +1102,11 @@ body {
 }
 
 .button-feedback {
+  display: block;
   box-sizing: border-box;
   position: relative;
-  padding-top: 9px;
+  padding-top: 10px;
   padding-bottom: 9px;
-  padding-left: 32px;
-  padding-right: 32px;
   width: 259px;
   z-index: 2;
 }
@@ -795,10 +1114,11 @@ body {
 .button-feedback::before {
   content: " ";
   position: absolute;
-  width: 259px;
   height: 8px;
   left: 0px;
-  top: 16px;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
   background-color: #ffe17f;
   z-index: -1;
 }
@@ -827,21 +1147,22 @@ body {
 }
 
 .button-about {
+  display: block;
+  width: 270px;
   box-sizing: border-box;
   position: relative;
-  padding-right: 22px;
-  padding-left: 22px;
-  padding-top: 9px;
+  padding-top: 10px;
   padding-bottom: 9px;
 }
 
 .button-about::before {
   content: " ";
   position: absolute;
-  width: 270px;
   height: 8px;
   left: 0px;
-  top: 16px;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
   background-color: #ffe17f;
   z-index: -1;
 }
@@ -918,6 +1239,7 @@ body {
   align-self: center;
 }
 
+
 .delivery-order {
   display: flex;
   box-sizing: border-box;
@@ -934,6 +1256,23 @@ body {
   margin-bottom: 70px;
   padding: 0;
   border: none;
+  position: relative;
+  padding-right: 125px;
+}
+
+.delivery-order::after {
+  height: 40px;
+  width: 40px;
+  content: " ";
+  background-color: rgba(220, 220, 220, 0.5);
+  background-image: url(../images/info.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  right: 42px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
 }
 
 .delivery-order:hover .delivery-truck-wrapper {
@@ -1172,7 +1511,7 @@ body {
   pointer-events: none;
 }
 
-/* Стили для ошибки при заполнении поля email */
+/* Стили для ошибки при заполнении поля email. Все таки ставим error или invalid?*/
 .error {
   border-bottom: 3px solid #FF3D3D;
 }
@@ -1529,8 +1868,6 @@ body {
   border: none;
   background-color: #ffffff00;
   padding-top: 10px;
-  padding-left: 47px;
-  padding-right: 47px;
   padding-bottom: 9px;
   width: 220px;
   z-index: 2;
@@ -1539,10 +1876,11 @@ body {
 .button-show::before {
   content: " ";
   position: absolute;
-  width: 220px;
+  width: 100%;
   height: 8px;
   left: 0px;
-  top: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #ffe17f;
   z-index: -1;
 }
@@ -1587,6 +1925,151 @@ body {
   margin-left: 40px;
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+
+.control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+}
+
+.control-input {
+  appearance: none;
+  position: absolute;
+  -webkit-appearance: none;
+}
+
+.control-mark {
+  box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  border-radius: 3px;
+}
+
+.control-input:checked + .control-mark {
+  box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  border: 2px solid #000000;
+  border-radius: 3px;
+    background-image: url(../images/checked-input.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 10px 10px;
+
+}
+
+
+.control-input:focus + .control-mark {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+.control:hover .control-label {
+   opacity: 0.6;
+}
+
+.control:hover .control-mark {
+  opacity: 0.6;
+}
+
+
+.control:active .control-label {
+  opacity: 0.5;
+}
+
+.control:active .control-mark {
+ opacity: 0.5;
+}
+
+
+.control-input:disabled + .control-label {
+  opacity: 0.3;
+}
+
+
+
+.control-input:disabled + .control-mark {
+  opacity: 0.3;
+}
+
+
+
+.control-radio {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+}
+
+.control-input-radio {
+  appearance: none;
+  position: absolute;
+  -webkit-appearance: none;
+}
+
+.control-mark-radio {
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+}
+
+.control-input-radio:checked + .control-mark-radio {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+    background-image: url(../images/radio.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 8px 8px;
+
+}
+
+
+.control-input-radio:focus + .control-mark-radio {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+.control-radio:hover .control-label {
+   opacity: 0.6;
+}
+
+.control-radio:hover .control-mark-radio {
+  opacity: 0.6;
+}
+
+
+.control-radio:active .control-label {
+  opacity: 0.5;
+}
+
+.control-radio:active .control-mark-radio {
+ opacity: 0.5;
+}
+
+
+.control-input-radio:disabled + .control-label {
+  opacity: 0.3;
+}
+
+
+
+.control-input-radio:disabled + .control-mark-radio {
+  opacity: 0.3;
 }
 
 .sorting-container {
@@ -1648,7 +2131,9 @@ body {
   line-height: 20px;
   letter-spacing: -0.02em;
   margin: 0;
+  width: 226px;
 }
+
 
 .product-list {
   display: grid;

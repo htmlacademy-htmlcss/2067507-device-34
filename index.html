@@ -36,27 +36,32 @@
           <a class="menu-link compare" href="">Сравнить</a>
         </li>
         <li class="menu-item">
-          <a class="menu-link basket" href="">Корзина</a>
+          <a class="menu-link basket" href="">Корзина
+            <span class="basket-count">2</span>
+          </a>
         </li>
       </ul>
     </nav>
     <div class="catalog-container-header">
       <ul class="items-list catalog-button">
         <li class="catalog">
-          <button type="button" class="navigation-link catalog-menu-button">Каталог товаров</button>
-          <div class="catalog-wrapper visually-hidden">
-            <ul class="list-of-items first-column visually-hidden">
+          <a class="navigation-link catalog-menu-button" href="#">Каталог товаров
+            <span class="button-open"></span>
+        </a>
+          <div class="catalog-wrapper">
+            <ul class="list-of-items">
+              <ul class="first-column">
               <li class="catalog-item">
                 <a class="catalog-text" href="#" title="Виртуальная реальность">Виртуальная реальность</a>
               </li>
               <li class="catalog-item">
                 <a class="catalog-text" href="catalog.html" title="Моноподы для селфи">Моноподы для селфи</a>
               </li>
-              <li class="catalog-item">
+              <li class="catalog-item ">
                 <a class="catalog-text" href="#" title="Экшн камеры">Экшн камеры</a>
               </li>
             </ul>
-            <ul class="list-of-items second-column visually-hidden">
+            <ul class="second-column">
               <li class="catalog-item">
                 <a class="catalog-text" href="#" title="Фитнес браслеты">Фитнес браслеты</a>
               </li>
@@ -64,11 +69,12 @@
                 <a class="catalog-text" href="#" title="Умные часы">Умные часы</a>
               </li>
             </ul>
-            <ul class="list-of-items third-column visually-hidden">
+             <ul class="third-column">
               <li class="catalog-item">
                 <a class="catalog-text" href="#" title="Квадрокоптеры">Квадрокоптеры</a>
               </li>
-            </ul>
+              </ul>
+              </ul>
           </div>
         </li>
       </ul>
@@ -91,13 +97,42 @@
         <div class="number-container">
           <p class="number-text">01</p>
         </div>
+        <div class="image-buttons-container">
         <img class="slider-image" src="images/slider-1.png" width="560" height="560" alt="Квадрокоптер">
+        <div class="slider-buttons-container">
+          <button class="slider-button slider-prev" type="button">
+            <span class="visually-hidden">Предыдущий товар</span>
+          </button>
+          <button class="slider-button slider-next" type="button">
+            <span class="visually-hidden">Следующий товар</span>
+          </button>
+        </div>
+      </div>
         <div class="sliders-text-container">
           <h2 class="sliders-header">Порхает как бабочка, жалит как пчела!</h2>
           <p class="subtitle">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под
             стандартную камеру.
           </p>
-          <a class="button details">Подробнее</a>
+          <div class="slider-interactive">
+          <a class="button details" href="#">Подробнее</a>
+          <ul class="slider-pagination">
+            <li class="slider-pagination-item">
+              <button class="slider-pagination-button current-slider" type="button">
+                <span class="visually-hidden">1 фото</span>
+              </button>
+            </li>
+            <li class="slider-pagination-item">
+              <button class="slider-pagination-button" type="button">
+                <span class="visually-hidden">2 фото</span>
+              </button>
+            </li>
+            <li class="slider-pagination-item">
+              <button class="slider-pagination-button" type="button">
+                <span class="visually-hidden">3 фото</span>
+              </button>
+            </li>
+          </ul>
+        </div>
           <div class="table">
             <ul class="specification specification-copter">
               <li class="features">800 м</li>
@@ -110,7 +145,7 @@
           </div>
         </div>
       </li>
-      <li class="sliders-content">
+      <li class="sliders-content visually-hidden">
         <div class="number-container">
           <p class="number-text">02</p>
         </div>
@@ -129,7 +164,7 @@
           </div>
         </div>
       </li>
-      <li class="sliders-content">
+      <li class="sliders-content visually-hidden">
         <div class="number-container">
           <p class="number-text">03</p>
         </div>
@@ -158,13 +193,16 @@
       </div>
     </ul>
 
-    <button class="slider-button slider-prev visually-hidden" type="button">
-      <span class="visually-hidden">Предыдущий товар</span>
-    </button>
-    <button class="slider-button slider-next visually-hidden" type="button">
-      <span class="visually-hidden">Следующий товар</span>
-    </button>
-
+    <!--
+    <div class="slider-buttons-container">
+      <button class="slider-button slider-prev" type="button">
+        <span class="visually-hidden">Предыдущий товар</span>
+      </button>
+      <button class="slider-button slider-next" type="button">
+        <span class="visually-hidden">Следующий товар</span>
+      </button>
+    </div>
+  -->
     <ul class="items-list icons-catalog-list">
       <li class="items-link">
         <a class="icons-link" href="#" title="Виртуальная реальность">
@@ -207,7 +245,7 @@
         </li>
         <li class="button-services">
           <button class="button button-slider" type="button">
-            <span class="inside-text">Гарантия</span>
+            <span class="inside-text">Гарантия
           </button>
         </li>
         <li class="button-services">

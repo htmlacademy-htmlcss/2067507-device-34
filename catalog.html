@@ -122,8 +122,39 @@
           <h2 class="visually-hidden" hidden>Список товаров с фильтрами.</h2>
           <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
             <p class="filter">Фильтр:</p>
+
             <fieldset class="catalog-filter-group">
-              <legend class="catalog-filter-title">Цвет</legend>
+              <legend class="catalog-filter-title">
+                <span class="catalog-filter-text">Стоимость</span>
+                </legend>
+
+              <div class="range">
+                <div class="range-scale">
+                  <div class="range-bar" style="left: 0px; width: 119px">
+                    <button class="range-toggle toggle-min">
+                      <span class="visually-hidden">Изменить минимальную цену.</span>
+                    </button>
+                    <button class="range-toggle toggle-max">
+                      <span class="visually-hidden">Изменить максимальную цену.</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="range-wrapper-inputs">
+                  <label class="catalog-filter-label">
+                    от <input class="range-input" type="number" value="0" name="min-price">
+      </label>
+                  <label class="catalog-filter-label">
+                    до <input class="range-input" type="number" value="5000" name="max-price" style="width: 37px">₽
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="catalog-filter-group">
+              <legend class="catalog-filter-title">
+                <span class="catalog-filter-text">Цвет</span>
+              </legend>
               <ul class="catalog-filter-list">
                 <li class="catalog-filter-item">
                   <label class="control">
@@ -163,7 +194,8 @@
               </ul>
             </fieldset>
             <fieldset class="catalog-filter-group">
-              <legend class="catalog-filter-title">Bluetooth</legend>
+              <legend class="catalog-filter-title">
+                <span class="catalog-filter-text">Bluetooth</span></legend>
               <ul class="catalog-filter-list">
                 <li class="catalog-filter-item">
                   <label class="control-radio">
@@ -191,6 +223,8 @@
               <option value="cheap">Возрастание</option>
               <option value="expensive">Убывание</option>
             </select>
+
+            <div class="arrows-container">
             <button class="arrows" type="button">
               <span class="visually-hidden">Сортировка по возрастанию.</span>
               <svg class="arrows-icons" aria-hidden="true" focusable="false" width="12" height="10" viewBox="0 0 12 10"
@@ -205,6 +239,7 @@
                 <path d="M6 10 .5 0h11" />
               </svg>
             </button>
+            </div>
           </div>
           <div class="cards">
             <ul class="product-list">

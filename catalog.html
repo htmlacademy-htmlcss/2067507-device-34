@@ -36,59 +36,87 @@
           <a class="menu-link compare" href="">Сравнить</a>
         </li>
         <li class="menu-item">
-          <a class="menu-link basket" href="">Корзина</a>
+          <a class="menu-link basket" href="">Корзина
+            <span class="basket-count">2</span>
+          </a>
+          <div class="popover popover-cart">
+            <div class="popover-content">
+              <h2 class="popover-title visually-hidden">Корзина</h2>
+              <ul class="cart-items-list">
+                <li class="cart-item">
+                  <a class="popover-items-link" href="#">
+                  <img class="cart-picture" src="images/catalog-1.jpg" width="39" height="43" alt=""> <!-- правильно ли я помню, что раз здесь итак написано, что у нас за товар в корзине, то мы alt оставляем пустой?-->
+                  <p class="cart-item-title basket-first">Любительская селфи-палка</p>
+                  </a>
+                  <button type="button" class="cart-item-button">
+                   <img class="cross" src="/images/cross.svg"  width="10" height="11" alt="Убрать из корзины">
+                  </button>
+                </li>
+                <li class="cart-item">
+                  <a class="popover-items-link" href="#">
+                  <img class="cart-picture" src="images/catalog-2.jpg" width="39" height="43">
+                  <p class="cart-item-title basket-second">Профессиональная селфи-палка</p>
+                  </a>
+                  <button class="cart-item-button" type="button">
+                    <img class="cross" src="/images/cross.svg"  width="10" height="11" alt="Убрать из корзины">
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <ul class="total-info">
+              <li class="total-number">Товаров:
+                <span class="total-count">2</span>
+              </li>
+              <li class="total-sum">Сумма:
+                <span class="total-price">2000</span>
+                <span class="currency">&#8381</span>
+              </li>
+            </ul>
+            <a class="popover-close-button button button-light" href="#">
+              <span class="open-basket-page">Открыть корзину</span>
+            </a>
         </li>
       </ul>
     </nav>
     <div class="catalog-container-header">
       <ul class="items-list catalog-button">
         <li class="catalog">
-          <button type="button" class="navigation-link catalog-menu-button">
-            Каталог товаров
-          </button>
-          <div class="catalog-wrapper visually-hidden">
-            <ul class="list-of-items first-column visually-hidden">
-              <li class="catalog-item">
-                <a class="catalog-text" href="#" title="Виртуальная реальность">
-                  Виртуальная реальность
-                </a>
-              </li>
-              <li class="catalog-item">
-                <a class="catalog-text" href="catalog.html" title="Моноподы для селфи">
-                  Моноподы для селфи
-                </a>
-              </li>
-              <li class="catalog-item">
-                <a class="catalog-text" href="#" title="Экшн камеры">
-                  Экшн камеры
-                </a>
-              </li>
-            </ul>
-            <ul class="list-of-items second-column visually-hidden">
-              <li class="catalog-item">
-                <a class="catalog-text" href="#" title="Фитнес браслеты">
-                  Фитнес браслеты
-                </a>
-              </li>
-              <li class="catalog-item">
-                <a class="catalog-text" href="#" title="Умные часы">
-                  Умные часы
-                </a>
-              </li>
-            </ul>
-            <ul class="list-of-items third-column visually-hidden">
-              <li class="catalog-item">
-                <a class="catalog-text" href="#" title="Квадрокоптеры">
-                  Квадрокоптеры
-                </a>
-              </li>
+          <a class="navigation-link catalog-menu-button" href="#">Каталог товаров
+            <span class="button-open"></span>
+          </a>
+          <div class="catalog-wrapper">
+            <ul class="list-of-items">
+              <ul class="first-column">
+                <li class="catalog-item">
+                  <a class="catalog-text active-point-catalog" href="#" title="Виртуальная реальность">Виртуальная реальность</a>
+                </li>
+                <li class="catalog-item">
+                  <a class="catalog-text" href="catalog.html" title="Моноподы для селфи">Моноподы для селфи</a>
+                </li>
+                <li class="catalog-item ">
+                  <a class="catalog-text" href="#" title="Экшн камеры">Экшн камеры</a>
+                </li>
+              </ul>
+              <ul class="second-column">
+                <li class="catalog-item">
+                  <a class="catalog-text" href="#" title="Фитнес браслеты">Фитнес браслеты</a>
+                </li>
+                <li class="catalog-item">
+                  <a class="catalog-text" href="#" title="Умные часы">Умные часы</a>
+                </li>
+              </ul>
+              <ul class="third-column">
+                <li class="catalog-item">
+                  <a class="catalog-text" href="#" title="Квадрокоптеры">Квадрокоптеры</a>
+                </li>
+              </ul>
             </ul>
           </div>
         </li>
       </ul>
       <ul class="items-list services-navigation">
         <li class="navigation-item">
-          <a class="navigation-link" href="">Доставка</a>
+          <a class="navigation-link active-point-header" href="">Доставка</a>
         </li>
         <li class="navigation-item">
           <a class="navigation-link" href="">Гарантия</a>
@@ -98,6 +126,7 @@
       </ul>
     </div>
   </header>
+
 
   <main class="main-container main-inner">
     <div class="inner-container">
@@ -247,9 +276,11 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-1.jpg" width="360" height="380"
                     alt="Любительская селфи-палка">
+                    <!--есть сомнения как как ставить эту картинку, может стоило через псевдоэлемент-->
+                    <img class="new-item" src="images/new.svg" width="60" height="60" alt="Новый товар">
                   <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
-                    <h3 class="product-card-title">Любительская селфи-палка</h3>
+                    <h3 class="product-card-title">Любительская<br> селфи-палка</h3>
                     <p class="product-card-price">500 ₽</p>
                   </div>
                 </a>
@@ -258,9 +289,10 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-4.jpg" width="360" height="380"
                     alt="Профессиональная селфи-палка">
+                    <img class="new-item" src="images/new.svg" width="60" height="60" alt="Новый товар">
                   <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
-                    <h3 class="product-card-title">Профессиональная селфи-палка </h3>
+                    <h3 class="product-card-title">Профессиональная<br> селфи-палка</h3>
                     <p class="product-card-price">1 500 ₽</p>
                   </div>
                 </a>
@@ -269,9 +301,10 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-2.jpg" width="360" height="380"
                     alt="Непотопляемая селфи-палка">
+                    <img class="new-item" src="images/new.svg" width="60" height="60" alt="Новый товар">
                   <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
-                    <h3 class="product-card-title">Непотопляемая селфи-палка</h3>
+                    <h3 class="product-card-title">Непотопляемая<br>селфи-палка</h3>
                     <p class="product-card-price">2 500 ₽</p>
                   </div>
                 </a>
@@ -280,9 +313,10 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-3.jpg" width="360" height="380"
                     alt="Селфи-палка «Следуй за мной»">
+                    <img class="new-item" src="images/new.svg" width="60" height="60" alt="Новый товар">
                   <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
-                    <h3 class="product-card-title">Селфи-палка «Следуй за мной»</h3>
+                    <h3 class="product-card-title">Селфи-палка «Следуй<br> за мной»</h3>
                     <p class="product-card-price">1 500 ₽</p>
                   </div>
                 </a>

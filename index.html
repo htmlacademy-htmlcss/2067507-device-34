@@ -44,27 +44,21 @@
               <h2 class="popover-title visually-hidden">Корзина</h2>
               <ul class="cart-items-list">
                 <li class="cart-item">
-                  <img class="cart-picture" src="images/catalog-1.jpg" width="39" height="43">
-                  <p class="cart-item-title">Любительская селфи-палка</p>
+                  <a class="popover-items-link" href="#">
+                  <img class="cart-picture" src="images/catalog-1.jpg" width="39" height="43" alt=""> <!-- правильно ли я помню, что раз здесь итак написано, что у нас за товар в корзине, то мы alt оставляем пустой?-->
+                  <p class="cart-item-title basket-first">Любительская селфи-палка</p>
+                  </a>
                   <button type="button" class="cart-item-button">
-                    <svg class="cross" width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M10 1.08 9.1.17 5 4.26.9.16l-.9.92 4.1 4.09L0 9.26l.9.9L5 6.09l4.1 4.09.9-.91-4.1-4.1L10 1.09Z"
-                        fill="#fff" />
-                    </svg>
-                    <span class="visually-hidden">Удалить из корзины</span>
+                   <img class="cross" src="/images/cross.svg"  width="10" height="11" alt="Убрать из корзины">
                   </button>
                 </li>
                 <li class="cart-item">
+                  <a class="popover-items-link" href="#">
                   <img class="cart-picture" src="images/catalog-2.jpg" width="39" height="43">
-                  <p class="cart-item-title">Профессиональная селфи-палка</p>
+                  <p class="cart-item-title basket-second">Профессиональная селфи-палка</p>
+                  </a>
                   <button class="cart-item-button" type="button">
-                    <svg class="cross" width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M10 1.08 9.1.17 5 4.26.9.16l-.9.92 4.1 4.09L0 9.26l.9.9L5 6.09l4.1 4.09.9-.91-4.1-4.1L10 1.09Z"
-                        fill="#fff" />
-                    </svg>
-                    <span class="visually-hidden">Удалить из корзины</span>
+                    <img class="cross" src="/images/cross.svg"  width="10" height="11" alt="Убрать из корзины">
                   </button>
                 </li>
               </ul>
@@ -94,7 +88,7 @@
             <ul class="list-of-items">
               <ul class="first-column">
                 <li class="catalog-item">
-                  <a class="catalog-text" href="#" title="Виртуальная реальность">Виртуальная реальность</a>
+                  <a class="catalog-text active-point-catalog" href="#" title="Виртуальная реальность">Виртуальная реальность</a>
                 </li>
                 <li class="catalog-item">
                   <a class="catalog-text" href="catalog.html" title="Моноподы для селфи">Моноподы для селфи</a>
@@ -122,7 +116,7 @@
       </ul>
       <ul class="items-list services-navigation">
         <li class="navigation-item">
-          <a class="navigation-link" href="">Доставка</a>
+          <a class="navigation-link active-point-header" href="">Доставка</a>
         </li>
         <li class="navigation-item">
           <a class="navigation-link" href="">Гарантия</a>
@@ -192,6 +186,14 @@
           <p class="number-text">02</p>
         </div>
         <img class="slider-image" src="images/slider-2.png" width="560" height="560" alt="Фитнес-браслет">
+        <div class="slider-buttons-container">
+          <button class="slider-button slider-prev" type="button">
+            <span class="visually-hidden">Предыдущий товар</span>
+          </button>
+          <button class="slider-button slider-next" type="button">
+            <span class="visually-hidden">Следующий товар</span>
+          </button>
+        </div>
         <div class="sliders-text-container">
           <h2 class="sliders-header">Худеем правильно!</h2>
           <p class="subtitle">Мотивирующие фитнес-браслеты помогут найти в себе силыне пропускать занятия и соблюдать
@@ -211,6 +213,14 @@
           <p class="number-text">03</p>
         </div>
         <img class="slider-image" src="images/slider-3.png" width="560" height="560" alt="Монопод для селфи">
+        <div class="slider-buttons-container">
+          <button class="slider-button slider-prev" type="button">
+            <span class="visually-hidden">Предыдущий товар</span>
+          </button>
+          <button class="slider-button slider-next" type="button">
+            <span class="visually-hidden">Следующий товар</span>
+          </button>
+        </div>
         <div class="sliders-text-container">
           <h2 class="sliders-header">Делай селфи, как Бен Стиллер! </h2>
           <p class="subtitle">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров
@@ -235,7 +245,8 @@
       </div>
     </ul>
 
-    <!--
+    <!-- Пока оставила в разметке, вдруг придется переделывать
+
     <div class="slider-buttons-container">
       <button class="slider-button slider-prev" type="button">
         <span class="visually-hidden">Предыдущий товар</span>
@@ -318,18 +329,8 @@
       </ul>
     </div>
     <button class="delivery-order button" type="button">
-      <div class="delivery-truck-wrapper">
-        <svg class="delivery-truck" aria-hidden="true" focusable="false" width="47" height="31" viewBox="0 0 47 31"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="m46.7 15.4-6.5-8.2c-.3-.4-.7-.6-1.2-.6h-8.3V1.5C30.7.7 30 0 29.2 0H1.5C.7 0 0 .7 0 1.5S.7 3 1.5 3h26.2v21.7H15.8c-.6-1.9-2.4-3.3-4.5-3.3-2.6 0-4.8 2.2-4.8 4.8 0 2.6 2.2 4.8 4.8 4.8 2.1 0 3.9-1.4 4.5-3.3h13.4c.8 0 1.5-.7 1.5-1.5V9.6h7.6l5.7 7.3v7.9h-2.2c-.6-1.9-2.4-3.3-4.5-3.3-2.6 0-4.8 2.2-4.8 4.8 0 2.6 2.1 4.8 4.8 4.8 2.1 0 3.9-1.4 4.5-3.3h3.7c.8 0 1.5-.7 1.5-1.5v-9.9c0-.4-.1-.7-.3-1ZM11.3 28c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.9 1.8-1.8 1.8Zm26.1 0c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.9 1.8-1.8 1.8Z"
-            fill="#000" />
-          <path
-            d="M19.4 9.6c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5H4.8c-.8 0-1.5.7-1.5 1.5S4 9.6 4.8 9.6h14.6ZM17.7 14.7c0-.8-.7-1.5-1.5-1.5H1.5c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5h14.7c.8 0 1.5-.7 1.5-1.5Z"
-            fill="#000" />
-        </svg>
-      </div>
       <p class="delivery-order-text">Доставим редкий товар под заказ</p>
+      <svg class="info" width="2" height="12" viewBox="0 0 2 12"  xmlns="http://www.w3.org/2000/svg"><path d="M2 0H0v2h2V0ZM2 4H0v8h2V4Z"/></svg>
     </button>
     <div class="about-container">
       <section class="about">
@@ -370,9 +371,10 @@
           длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
         <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
           <label for="newsletter-email"></label>
-          <input class="field field-newsletter" placeholder="Ваш e-mail" type="email" name="newsletter-email" id="newsletter-email"
+          <input class="field field-newsletter" placeholder="Ваш e-mail" type="email" name="newsletter-email" id="newsletter-email required"
             aria-label="Поле для ввода e-mail." required>
-          <button class="button newsletter-button" type="submit">Подписаться
+          <button class="button newsletter-button" type="submit">
+            Подписаться
           </button>
         </form>
         <p class="mailing-free">Это бесплатно</p>
@@ -456,32 +458,32 @@
   </footer>
   <div class="modal-container">
     <div class="modal modal-auth">
-      <button class="modal-close-button">
-        <span class="visually-hidden">Закрыть</span>
-      </button>
       <section class="modal-content">
+        <button class="modal-close-button">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
         <h2 class="modal-title">Доставка под заказ</h2>
         <form class="auth-form" action="https://echo.htmlacademy.ru/" method="post">
           <p class="field-group">
             <label class="caption-text" for="auth-name">Ваше имя:</label>
-            <input class="name-form-field field" type="text" id="auth-name" name="auth-name" placeholder="Введите имя">
+            <input class="name-form-field field" type="text" id="auth-name" name="auth-name" placeholder="Введите имя" required>
             <span class="clue">Добавьте имя</span>
           </p>
           <p class="field-group">
             <label class="caption-text" for="auth-email">Ваш e-mail:</label>
-            <input class="email-form-field field" type="email" id="auth-email" name="auth-email" placeholder="Введите почту" value="почта">
+            <input class="email-form-field field" type="email" id="auth-email" name="auth-email" placeholder="Введите почту" value="почта" required>
             <span class="clue">Забавный у вас адрес</span>
           </p>
           <p class="field-group">
             <label class="caption-text" for="auth-item">Что нужно привезти:</label>
-            <input class="item-form-field field" type="text" id="auth-item" name="auth-item" placeholder="В свободной форме">
+            <input class="item-form-field field" type="text" id="auth-item" name="auth-item" placeholder="В свободной форме" required>
           </p>
           <p class="field-group">
             <span class="form-label">
             <label class="caption-text" for="auth-count">Количество:</label>
             <span class="tooltip">
                 <button class="tooltip-toggle" aria-labelledby="tooltip-label" type="button">
-                <svg class="tooltip-icon" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="13" r="13" fill="#FFE17F"/><path d="M14 7h-2v2h2V7ZM14 11h-2v8h2v-8Z" fill="#000"/></svg>
+                <svg class="tooltip-icon" aria-hidden="true" focusable="false" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="13" r="13" fill="#FFE17F"/><path d="M14 7h-2v2h2V7ZM14 11h-2v8h2v-8Z" fill="#000"/></svg>
               </button>
             <span class="tooltip-text" role="tooltip" id="tooltip-label">Постараемся найти, сколько нужно. Привезём сколько получится по требованиям
               к провозу багажа.</span>
@@ -489,17 +491,20 @@
           </span>
           <span class="quantity-container">
             <button class="less-number" type="button">
-              <span class="visually-hidden">Добавить меньше.</span>
+              <!--Сделала иконку минус img и alt, а иконку плюс сделала svg + span. Работают оба, какой лучше использовать?-->
+              <img class="modal-minus" src="/images/less.svg" alt="Добавить меньше." width="16" height="16">
             </button>
-            <input class="number-form-field field" type="number" id="auth-count" name="number" value="1">
+            <input class="number-form-field field" type="number" id="auth-count" name="number" value="1" min="1" required >
             <button class="more-number" type="button">
               <span class="visually-hidden">Добавить больше.</span>
+              <svg class="modal-plus" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M16 7H9V0H7v7H0v2h7v7h2V9h7V7Z"/></svg>
             </button>
           </span>
           </p>
           <button class="send-form button" type="submit">
             Отправить
           </button>
+        </label>
         </form>
       </section>
     </div>

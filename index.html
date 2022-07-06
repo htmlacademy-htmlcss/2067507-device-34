@@ -5,16 +5,19 @@
   <meta charset="utf-8">
   <title>Девайс</title>
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
   <h1 class="visually-hidden">Интернет магазин «Девайс»</h1>
-  <header class="page-header">
+  <header class="page-header index">
     <a class="navigation-logo" href="#">
       <img class="logo" src="images/logo.svg" width="145" height="36" alt="Логотип Интернет-магазина Девайс.">
     </a>
     <nav class="menu-container">
       <form class="menu-searcher" action="https://echo.htmlacademy.ru" method="POST">
+        <!--Валидатор ругается за скрытый лэйбл, я так понимаю опять неправильно вставила подпись к импуту-->
         <label class="visually-hidden" for="name">Поисковое окно.</label>
         <div class="search-wrapper">
           <input type="search" class="search-button" placeholder="Текст поиска" name="search">
@@ -27,8 +30,8 @@
         <li class="menu-item">
           <a class="menu-link log-into" href="">Войти</a>
         </li>
-        <li class="menu-item">
-          <a class="menu-link" href="">Выйти</a>
+        <li class="menu-item visually-hidden">
+          <a class="menu-link log-out" href="">Выйти</a>
         </li>
       </ul>
       <ul class="menu-list menu-basket">
@@ -45,8 +48,7 @@
               <ul class="cart-items-list">
                 <li class="cart-item">
                   <a class="popover-items-link" href="#">
-                    <img class="cart-picture" src="images/catalog-1.jpg" width="39" height="43" alt="">
-                    <!-- правильно ли я помню, что раз здесь итак написано, что у нас за товар в корзине, то мы alt оставляем пустой?-->
+                    <img class="cart-picture" src="images/catalog-1.jpg" width="39" height="43" alt="Любительская селфи-палка.">
                     <p class="cart-item-title basket-first">Любительская селфи-палка</p>
                   </a>
                   <button type="button" class="cart-item-button">
@@ -55,7 +57,7 @@
                 </li>
                 <li class="cart-item">
                   <a class="popover-items-link" href="#">
-                    <img class="cart-picture" src="images/catalog-2.jpg" width="39" height="43">
+                    <img class="cart-picture" src="images/catalog-2.jpg" width="39" height="43" alt="Профессиональная селфи-палка.">
                     <p class="cart-item-title basket-second">Профессиональная селфи-палка</p>
                   </a>
                   <button class="cart-item-button" type="button">
@@ -76,9 +78,11 @@
             <a class="popover-close-button button button-light" href="#">
               <span class="open-basket-page">Открыть корзину</span>
             </a>
+          </div>
         </li>
       </ul>
     </nav>
+
     <div class="catalog-container-header">
       <ul class="items-list catalog-button">
         <li class="catalog">
@@ -86,22 +90,22 @@
             <span class="button-open"></span>
           </a>
           <div class="catalog-wrapper">
-            <ul class="list-of-items">
+            <div class="list-of-items">
               <ul class="first-column">
                 <li class="catalog-item">
-                  <a class="catalog-text active-point-catalog" href="#" title="Виртуальная реальность">Виртуальная
+                  <a class="catalog-text" href="#" title="Виртуальная реальность">Виртуальная
                     реальность</a>
                 </li>
                 <li class="catalog-item">
                   <a class="catalog-text" href="catalog.html" title="Моноподы для селфи">Моноподы для селфи</a>
                 </li>
                 <li class="catalog-item ">
-                  <a class="catalog-text" href="#" title="Экшн камеры">Экшн камеры</a>
+                  <a class="catalog-text" href="#" title="Экшн камеры">Экшн-камеры</a>
                 </li>
               </ul>
               <ul class="second-column">
                 <li class="catalog-item">
-                  <a class="catalog-text" href="#" title="Фитнес браслеты">Фитнес браслеты</a>
+                  <a class="catalog-text" href="#" title="Фитнес браслеты">Фитнес-браслеты</a>
                 </li>
                 <li class="catalog-item">
                   <a class="catalog-text" href="#" title="Умные часы">Умные часы</a>
@@ -112,7 +116,7 @@
                   <a class="catalog-text" href="#" title="Квадрокоптеры">Квадрокоптеры</a>
                 </li>
               </ul>
-            </ul>
+            </div>
           </div>
         </li>
       </ul>
@@ -178,7 +182,7 @@
             </ul>
             <ul class="specification specification-copter">
               <li class="features">50 м</li>
-              <li class="features-text">Радус поражения</li>
+              <li class="features-text">Радиус поражения</li>
             </ul>
           </div>
         </div>
@@ -243,8 +247,8 @@
               <li class="features-text">Материал</li>
             </ul>
           </div>
+        </div>
       </li>
-      </div>
     </ul>
 
     <!-- Пока оставила в разметке, вдруг придется переделывать
@@ -271,7 +275,7 @@
       </li>
       <li class="items-link">
         <a class="icons-link" href="#" title="Экшн камеры">
-          <p class="icons-text">Экшн камеры</p>
+          <p class="icons-text">Экшн-камеры</p>
         </a>
       </li>
       <li class="items-link">
@@ -300,7 +304,7 @@
         </li>
         <li class="button-services">
           <button class="button button-slider" type="button">
-            <span class="inside-text">Гарантия
+            <span class="inside-text">Гарантия</span>
           </button>
         </li>
         <li class="button-services">
@@ -312,17 +316,17 @@
       <ul class="services-list">
         <li class="delivery">
           <h3 class="services-title">Доставка</h3>
-          <p class="services-text">Мы с удовольствием доставим ваш товар прямо
+          <p class="services-text">Мы с удовольствием доставим ваш товар прямо<br>
             к вашему подъезду совершенно бесплатно! Ведь
             мы неплохо заработаем, поднимая его на ваш этаж.</p>
         </li>
-        <li class="guarantee visually-hidden">
+        <li class="guarantee">
           <h3 class="services-title">Гарантия</h3>
           <p class="services-text">Если из-за возгорания купленного у нас товара у вас
             сгорит дом — не переживайте, мы выдадим вам новый.
             Товар, не дом, конечно же.</p>
         </li>
-        <li class="loan visually-hidden">
+        <li class="loan">
           <h3 class="services-title">Кредит</h3>
           <p class="services-text">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас
             наиболее
@@ -331,7 +335,7 @@
       </ul>
     </div>
     <button class="delivery-order button" type="button">
-      <p class="delivery-order-text">Доставим редкий товар под заказ</p>
+      <span class="delivery-order-text">Доставим редкий товар под заказ</span>
       <svg class="info" width="2" height="12" viewBox="0 0 2 12" xmlns="http://www.w3.org/2000/svg">
         <path d="M2 0H0v2h2V0ZM2 4H0v8h2V4Z" />
       </svg>
@@ -371,14 +375,13 @@
     <div class="newsletter">
       <section class="newsletter-text-container">
         <h3 class="newsletter-title">Подпишитесь на рассылку</h3>
-        <p class="mailing">Еженедельный дайджест с обзорами новинок,
-          длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
+        <p class="mailing">Еженедельный дайджест с обзорами новинок,<br>длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
         <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
           <label for="newsletter-email"></label>
           <input class="field field-newsletter" placeholder="Ваш e-mail" type="email" name="newsletter-email"
-            id="newsletter-email required" aria-label="Поле для ввода e-mail." required>
+            id="newsletter-email" aria-label="Поле для ввода e-mail." required>
           <button class="button newsletter-button" type="submit">
-            Подписаться
+            <span class="subcribe">Подписаться</span>
           </button>
         </form>
         <p class="mailing-free">Это бесплатно</p>
@@ -447,7 +450,7 @@
       </div>
       <div class="reference">
         <address class="footer-contacts-tel">
-          <a class="footer-contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+          <a class="footer-contacts-phone" href="tel:+78128121212">Тел.: +7 (812) 812-12-12</a>
         </address>
         <a class="htmlacademy-link" href="https://htmlacademy.ru/">
           <span class="visually-hidden">Логотип HTML-Academy.</span>
@@ -472,7 +475,7 @@
             <label class="caption-text" for="auth-name">Ваше имя:</label>
             <input class="name-form-field field" type="text" id="auth-name" name="auth-name" placeholder="Введите имя"
               required>
-            <span class="clue">Добавьте имя</span>
+            <span class="clue visually-hidden">Добавьте имя</span>
           </p>
           <p class="field-group">
             <label class="caption-text" for="auth-email">Ваш e-mail:</label>
@@ -497,8 +500,7 @@
                   </svg>
                 </button>
                 <span class="tooltip-text" role="tooltip" id="tooltip-label">Постараемся найти, сколько нужно. Привезём
-                  сколько получится по требованиям
-                  к провозу багажа.</span>
+                  сколько получится по требованиям <br>к провозу багажа.</span>
               </span>
             </span>
             <span class="quantity-container">
@@ -506,6 +508,7 @@
                 <!--Сделала иконку минус img и alt, а иконку плюс сделала svg + span. Работают оба, какой лучше использовать?-->
                 <img class="modal-minus" src="/images/less.svg" alt="Добавить меньше." width="16" height="16">
               </button>
+              <!-- прошу обратить внимание на стилизацию этого блока. Я не очень понимаю как здесь это должно выглядеть-->
               <input class="number-form-field field" type="number" id="auth-count" name="number" value="1" min="1"
                 required>
               <button class="more-number" type="button">
@@ -519,7 +522,6 @@
           <button class="send-form button" type="submit">
             Отправить
           </button>
-          </label>
         </form>
       </section>
     </div>

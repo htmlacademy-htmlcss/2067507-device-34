@@ -5,16 +5,19 @@
   <meta charset="utf-8">
   <title>Каталог</title>
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
   <h1 class="visually-hidden">Интернет магазин «Девайс».</h1>
-  <header class="page-header">
+  <header class="page-header catalog-page">
     <a class="navigation-logo" href="index.html">
       <img class="logo" src="images/logo.svg" width="145" height="36" alt="Логотип Интернет-магазина Девайс.">
     </a>
     <nav class="menu-container">
       <form class="menu-searcher" action="https://echo.htmlacademy.ru" method="POST">
+        <!--Валидатор ругается за скрытый лэйбл, я так понимаю опять неправильно вставила подпись к импуту-->
         <label class="visually-hidden" for="name">Поисковое окно.</label>
         <div class="search-wrapper">
           <input type="search" class="search-button" placeholder="Текст поиска" name="search">
@@ -25,7 +28,7 @@
       </form>
       <ul class="menu-list log-in">
         <li class="menu-item">
-          <a class="menu-link log-into" href="">Войти</a>
+          <a class="menu-link log-into" href="">Коля Петухов</a>
         </li>
         <li class="menu-item">
           <a class="menu-link" href="">Выйти</a>
@@ -45,21 +48,20 @@
               <ul class="cart-items-list">
                 <li class="cart-item">
                   <a class="popover-items-link" href="#">
-                    <img class="cart-picture" src="images/catalog-1.jpg" width="39" height="43" alt="">
-                    <!-- правильно ли я помню, что раз здесь итак написано, что у нас за товар в корзине, то мы alt оставляем пустой?-->
+                    <img class="cart-picture" src="images/catalog-1.jpg" width="39" height="43" alt="Любительская селфи палка.">
                     <p class="cart-item-title basket-first">Любительская селфи-палка</p>
                   </a>
                   <button type="button" class="cart-item-button">
-                    <img class="cross" src="/images/cross.svg" width="10" height="11" alt="Убрать из корзины">
+                    <img class="cross" src="/images/cross.svg" width="10" height="11" alt="Убрать из корзины.">
                   </button>
                 </li>
                 <li class="cart-item">
                   <a class="popover-items-link" href="#">
-                    <img class="cart-picture" src="images/catalog-2.jpg" width="39" height="43">
+                    <img class="cart-picture" src="images/catalog-2.jpg" width="39" height="43" alt="Профессиональная селфи палка.">
                     <p class="cart-item-title basket-second">Профессиональная селфи-палка</p>
                   </a>
                   <button class="cart-item-button" type="button">
-                    <img class="cross" src="/images/cross.svg" width="10" height="11" alt="Убрать из корзины">
+                    <img class="cross" src="/images/cross.svg" width="10" height="11" alt="Убрать из корзины.">
                   </button>
                 </li>
               </ul>
@@ -70,12 +72,13 @@
               </li>
               <li class="total-sum">Сумма:
                 <span class="total-price">2000</span>
-                <span class="currency">&#8381</span>
+                <span class="currency">₽</span>
               </li>
             </ul>
             <a class="popover-close-button button button-light" href="#">
               <span class="open-basket-page">Открыть корзину</span>
             </a>
+          </div>
         </li>
       </ul>
     </nav>
@@ -161,11 +164,11 @@
 
               <div class="range">
                 <div class="range-scale">
-                  <div class="range-bar" style="left: 0px; width: 119px">
-                    <button class="range-toggle toggle-min">
+                  <div class="range-bar" style="left: 0; width: 119px">
+                    <button class="range-toggle toggle-min" type="button">
                       <span class="visually-hidden">Изменить минимальную цену.</span>
                     </button>
-                    <button class="range-toggle toggle-max">
+                    <button class="range-toggle toggle-max" type="button">
                       <span class="visually-hidden">Изменить максимальную цену.</span>
                     </button>
                   </div>
@@ -176,7 +179,7 @@
                     от <input class="range-input" type="number" value="0" name="min-price">
                   </label>
                   <label class="catalog-filter-label">
-                    до <input class="range-input" type="number" value="5000" name="max-price" style="width: 37px">₽
+                    до <input class="range-input" type="number" value="5000" name="max-price" style="width: 37px">
                   </label>
                 </div>
               </div>
@@ -276,11 +279,9 @@
           <div class="cards">
             <ul class="product-list">
               <li class="product-card">
-                <a class="product-card-link" href="#">
+                <a class="product-card-link product-new" href="#">
                   <img class="product-card-image" src="images/catalog-1.jpg" width="360" height="380"
                     alt="Любительская селфи-палка">
-                  <!--есть сомнения как как ставить эту картинку, может стоило через псевдоэлемент-->
-                  <img class="new-item" src="images/new.svg" width="60" height="60" alt="Новый товар">
                   <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
                     <h3 class="product-card-title">Любительская<br> селфи-палка</h3>
@@ -292,7 +293,6 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-4.jpg" width="360" height="380"
                     alt="Профессиональная селфи-палка">
-                  <img class="new-item" src="images/new.svg" width="60" height="60" alt="Новый товар">
                   <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
                     <h3 class="product-card-title">Профессиональная<br> селфи-палка</h3>
@@ -304,7 +304,6 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-2.jpg" width="360" height="380"
                     alt="Непотопляемая селфи-палка">
-                  <img class="new-item" src="images/new.svg" width="60" height="60" alt="Новый товар">
                   <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
                     <h3 class="product-card-title">Непотопляемая<br>селфи-палка</h3>
@@ -316,7 +315,6 @@
                 <a class="product-card-link" href="#">
                   <img class="product-card-image" src="images/catalog-3.jpg" width="360" height="380"
                     alt="Селфи-палка «Следуй за мной»">
-                  <img class="new-item" src="images/new.svg" width="60" height="60" alt="Новый товар">
                   <span class="card-info button">Подробнее</span>
                   <div class="product-card-content">
                     <h3 class="product-card-title">Селфи-палка «Следуй<br> за мной»</h3>
@@ -334,6 +332,7 @@
                   <p class="previous-page">Назад</p>
                 </a>
               </li>
+              <ul class="page-numbers-list">
               <li class="pagination-item">
                 <a class="pagination-link" href="#">
                   <p class="page-number">1</p>
@@ -359,6 +358,7 @@
                   <p class="page-number">15</p>
                 </a>
               </li>
+              </ul>
               <li class="pagination-item">
                 <a class="pagination-link pagination-next" href="#">
                   <p class="next-page">Вперед</p>

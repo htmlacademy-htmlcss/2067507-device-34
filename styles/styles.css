@@ -60,6 +60,7 @@ body {
   width: 145px;
   margin-bottom: 30px;
   margin-left: 60px;
+
 }
 
 .logo {
@@ -119,6 +120,7 @@ body {
   outline-offset: 4px;
 }
 
+/*Стиль для неактивного поискового окна*/
 .search-button:disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -184,7 +186,7 @@ body {
   padding-top: 8px;
   padding-bottom: 8px;
   border: 2px solid #000;
-  border-radius: 0px 20px 20px 0;
+  border-radius: 0 20px 20px 0;
 }
 
 .submit:hover .submit-text {
@@ -204,6 +206,7 @@ body {
   outline-offset: 2px;
 }
 
+/*Стиль для неактивой кнопки поиск*/
 .submit:disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -272,7 +275,6 @@ body {
 
 .basket-count {
   position: absolute;
-  display: block;
   width: 21px;
   height: 21px;
   border-radius: 50%;
@@ -294,7 +296,6 @@ body {
   top: 41px;
   left: -129px;
   right: 0;
-  z-index: 1;
   box-sizing: border-box;
   width: 320px;
   padding-bottom: 20px;
@@ -480,8 +481,6 @@ body {
   outline: 2px solid #AF4FFF;
 }
 
-.cart-item-price {}
-
 .menu-searcher {
   display: grid;
   grid-template-columns: auto 160px;
@@ -583,6 +582,9 @@ body {
   left: -60px;
   padding-left: 60px;
   padding-right: 60px;
+}
+
+.catalog-wrapper {
   display: none;
 }
 
@@ -664,10 +666,9 @@ body {
 .catalog-button:focus-within .catalog-wrapper {
   display: block;
 }
-/*понять как сделать шапку длинее фон*/
 
-
-.button-open {
+.catalog::after {
+  content: " ";
   position: absolute;
   display: block;
   right: 0;
@@ -719,40 +720,39 @@ line-height: 18px;
 
 }
 
-/*Стили для закрытия каталога*/
-.catalog-button:hover .button-close {
+/*Стили для закрытия каталога, Насколько ок то, что у меня + на - меняется только при помощи добавления класса, а не по нажатию?*/
+.catalog-button-close:hover .catalog::after {
   opacity: 1;
 }
 
-
-.catalog-button:hover .catalog-menu-button::after {
+.catalog-button-close:hover .catalog-menu-button::after {
   transform: rotate(180deg);
   opacity: 1;
 }
 
-.catalog-button:hover .catalog-menu-button::before {
+.catalog-button-close:hover .catalog-menu-button::before {
   opacity: 1;
 }
 
-.catalog-button:active .catalog-menu-button::after {
+.catalog-button-close:active .catalog-menu-button::after {
   transform: rotate(180deg);
   opacity: 1;
 }
 
-.catalog-button:active .catalog-menu-button::before {
+.catalog-button-close:active .catalog-menu-button::before {
   opacity: 1;
 }
 
-.catalog-button:active.button-close {
+.catalog-button-close:active.button-close {
   opacity: 1;
 }
 
-.catalog-button:focus .catalog-menu-button::after {
+.catalog-button-close:focus .catalog-menu-button::after {
   transform: rotate(180deg);
 }
 
 /* Стили для открытия каталога */
-.catalog-button:hover .button-open {
+.catalog-button:hover .catalog::after {
   opacity: 1;
 }
 
@@ -774,17 +774,13 @@ line-height: 18px;
   opacity: 1;
 }
 
-.catalog-button:active.button-open {
+.catalog-button:active.catalog-after {
   opacity: 1;
 }
 
 .catalog-menu-button:focus .catalog-menu-button::after {
   transform: rotate(180deg);
   outline: 2px solid #AF4FFF;
-}
-
-.catalog-menu-button:focus .page-header {
-   background-color:
 }
 
 
@@ -814,17 +810,14 @@ line-height: 18px;
 }
 
 .number-container {
-  position: relative;
   width: 1160px;
-  background-color: #ffe17f;
-  padding-top: 135px;
+  background: linear-gradient( to bottom, #ffe17f 135px, #ffffff 135px);
+  box-sizing: border-box;
+  color: #000;
 }
 
 .number-text {
   display: block;
-  position: absolute;
-  top: 0;
-  right: 48px;
   box-sizing: border-box;
   font-weight: 700;
   font-size: 180px;
@@ -835,6 +828,7 @@ line-height: 18px;
   margin-left: auto;
   min-width: 250px;
   padding-top: 7px;
+  margin-right: 48px;
 }
 
 .icons-catalog-list {
@@ -896,7 +890,7 @@ line-height: 18px;
 .image-buttons-container {
   position: relative;
   margin-right: 40px;
-  margin-top: -150px;
+  margin-top: -172px;
 }
 
 .main-index {
@@ -933,6 +927,10 @@ line-height: 18px;
 .slider-button:focus {
   outline: 2px solid #AF4FFF;
   outline-offset: 2px;
+}
+
+.current-button:disabled .inside-text {
+  opacity: 0.1;
 }
 
 .slider-button:disabled {
@@ -972,7 +970,7 @@ line-height: 18px;
 }
 
 .sliders-text-container {
-  margin-top: -28px;
+  margin-top: -50px;
   width: 560px;
   right: 0;
   z-index: 3;
@@ -1099,7 +1097,7 @@ line-height: 18px;
   position: absolute;
   width: 100%;
   height: 8px;
-  left: 0px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   background-color: #ffe17f;
@@ -1115,7 +1113,7 @@ line-height: 18px;
   position: absolute;
   width: 220px;
   height: 8px;
-  left: 0px;
+  left: 0;
   top: 16px;
   background-color: #ffc700;
   z-index: -1;
@@ -1129,10 +1127,12 @@ line-height: 18px;
   outline: 2px solid #AF4FFF;
 }
 
+
+/*
 .details:disabled {
   opacity: 0.3;
   pointer-events: none;
-}
+}*/
 
 .button-slider {
   box-sizing: border-box;
@@ -1151,7 +1151,7 @@ line-height: 18px;
   position: absolute;
   width: 100%;
   height: 8px;
-  left: 0px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   background-color: #ffe17f;
@@ -1167,7 +1167,7 @@ line-height: 18px;
   position: absolute;
   width: 160px;
   height: 8px;
-  left: 0px;
+  left: 0;
   top: 15px;
   background-color: #ffc700;
   z-index: -1;
@@ -1269,7 +1269,6 @@ line-height: 18px;
   content: " ";
   background-image: url(../images/selfi-icon.svg);
   background-repeat: no-repeat;
-  background-repeat: no-repeat;
   background-position: center bottom;
   display: block;
   height: 160px;
@@ -1281,7 +1280,6 @@ line-height: 18px;
 .items-link:nth-child(3) .icons-link::before {
   content: " ";
   background-image: url(../images/camera-icon.svg);
-  background-repeat: no-repeat;
   background-repeat: no-repeat;
   background-position: center center;
   display: block;
@@ -1295,7 +1293,6 @@ line-height: 18px;
   content: " ";
   background-image: url(../images/watch-icon.svg);
   background-repeat: no-repeat;
-  background-repeat: no-repeat;
   background-position: center center;
   display: block;
   height: 160px;
@@ -1308,7 +1305,6 @@ line-height: 18px;
   content: " ";
   background-image: url(../images/braclets-icon.svg);
   background-repeat: no-repeat;
-  background-repeat: no-repeat;
   background-position: center center;
   display: block;
   height: 160px;
@@ -1320,7 +1316,6 @@ line-height: 18px;
 .items-link:nth-child(6) .icons-link::before {
   content: " ";
   background-image: url(../images/copter-icon.svg);
-  background-repeat: no-repeat;
   background-repeat: no-repeat;
   background-position: center center;
   display: block;
@@ -1364,7 +1359,7 @@ line-height: 18px;
 }
 
 .button-services:last-child {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .button-feedback {
@@ -1382,7 +1377,7 @@ line-height: 18px;
   content: " ";
   position: absolute;
   height: 8px;
-  left: 0px;
+  left: 0;
   top: 50%;
   width: 100%;
   transform: translateY(-50%);
@@ -1403,7 +1398,7 @@ line-height: 18px;
   position: absolute;
   width: 259px;
   height: 8px;
-  left: 0px;
+  left: 0;
   top: 16px;
   background-color: #FFC700;
   z-index: -1;
@@ -1427,7 +1422,7 @@ line-height: 18px;
   content: " ";
   position: absolute;
   height: 8px;
-  left: 0px;
+  left: 0;
   top: 50%;
   width: 100%;
   transform: translateY(-50%);
@@ -1448,7 +1443,7 @@ line-height: 18px;
   position: absolute;
   width: 270px;
   height: 8px;
-  left: 0px;
+  left: 0;
   top: 16px;
   background-color: #FFC700;
   z-index: -1;
@@ -1818,6 +1813,7 @@ line-height: 18px;
   outline: 2px solid #AF4FFF;
 }
 
+/*Неактивное состояние для подписки на рассылку*/
 .newsletter-button:disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -1838,6 +1834,8 @@ line-height: 18px;
   outline: none;
   background-color: #DCDCDC;
 }
+
+/* Неактивное состояние для форм*/
 
 .field:disabled {
   opacity: 0.3;
@@ -2198,8 +2196,8 @@ line-height: 18px;
   width: 20px;
   height: 20px;
   background-color: #EBEBEB;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   box-sizing: border-box;
   border-radius: 50%;
   border: 2px solid #000;
@@ -2211,8 +2209,8 @@ line-height: 18px;
   width: 20px;
   height: 20px;
   background-color: #EBEBEB;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   box-sizing: border-box;
   border: 2px solid #000;
   border-radius: 50%;
@@ -2388,7 +2386,7 @@ line-height: 18px;
   position: absolute;
   width: 100%;
   height: 8px;
-  left: 0px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   background-color: #ffe17f;
@@ -2404,7 +2402,7 @@ line-height: 18px;
   position: absolute;
   width: 220px;
   height: 8px;
-  left: 0px;
+  left: 0;
   top: 15px;
   background-color: #FFC700;
   z-index: -1;
@@ -2418,6 +2416,7 @@ line-height: 18px;
   outline: 2px solid #AF4FFF;
 }
 
+/* Стиль для кнопки подробнее, неактивное */
 .button-show:disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -2590,6 +2589,7 @@ line-height: 19px;
   opacity: 0.5;
 }
 
+/*Стили неактивных чекбоксов*/
 .control-input-radio:disabled+.control-label {
   opacity: 0.3;
 }
@@ -2655,6 +2655,7 @@ line-height: 19px;
   outline: 2px solid #AF4FFF;
 }
 
+/*Неактивное состояние сортировки в каталоге */
 .select-control:disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -2783,10 +2784,12 @@ line-height: 19px;
 }
 
 .product-card-price {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   color: #444444;
-  font-size: 400;
   margin: 0;
   margin-left: auto;
   padding-top: 1px;
@@ -2796,7 +2799,6 @@ line-height: 19px;
   display: block;
   align-items: center;
   text-decoration: none;
-  color: #000;
   font-size: 16px;
   line-height: 20px;
   color: #444444;
@@ -2909,7 +2911,7 @@ line-height: 19px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #000;
-  margin: 0px;
+  margin: 0;
   padding: 25px;
 }
 
@@ -2961,6 +2963,7 @@ line-height: 19px;
 
 .arrows-container {
   display: flex;
+  flex-wrap: wrap;
   background-color: rgba(240, 240, 240, 1);
   padding-right: 40px;
   margin-left: auto;
@@ -3008,7 +3011,7 @@ line-height: 19px;
   outline: 2px solid #AF4FFF;
 }
 
-/* Состояние выключенных кнопок для кнопок, которык выглядят как ссылки */
+/* Состояние выключенных кнопок для ссылок, которыt выглядят как кнопки */
 .disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -3023,6 +3026,10 @@ line-height: 19px;
   height: 100%;
   background-color: rgba(240, 240, 240, 0.9);
   z-index: 6;
+}
+
+.modal-container {
+  display: none;
 }
 
 .auth-form {
@@ -3108,6 +3115,7 @@ line-height: 19px;
 .quantity-container {
   display: flex;
   position: relative;
+  box-sizing: border-box;
 }
 
 .name-form-field {
@@ -3138,11 +3146,11 @@ line-height: 19px;
 }
 
 /*класс для ошибки в введении емайла */
-.email-form-field:invalid {
+.email-form-error {
   border: 2px solid #FF3D3D;
 }
 
-.email-form-field:invalid+.clue {
+.email-form-error+.clue {
   color: #FF3D3D;
 }
 
@@ -3153,8 +3161,9 @@ line-height: 19px;
   padding-left: 20px;
 }
 
-.number-form-field:invalid {
-  border: #FF3D3D 2px solid;
+/*Стиль для ошибки в кол-ве товара*/
+ .number-form-error {
+  border: 2px solid #FF3D3D;
 }
 
 .field-group {
@@ -3176,20 +3185,20 @@ line-height: 19px;
 .less-number,
 .more-number {
   background-color: rgba(240, 240, 240, 1);
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
 }
 
 .less-number {
-  position: absolute;
-  left: 2px;
-  top: 2px;
+  background-image: url(../images/less.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .more-number {
-  position: absolute;
-  left: 122px;
-  top: 2px;
+  background-image: url(../images/more.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .less-number,
@@ -3245,10 +3254,6 @@ line-height: 19px;
   outline: 2px solid #AF4FFF;
 }
 
-.modal-container {
-  display: none;
-}
-
 .field-newsletter {
   width: 559px;
   border-bottom: 3px solid #C4C4C4;
@@ -3256,9 +3261,8 @@ line-height: 19px;
   padding-top: 3px;
 }
 
-
-/* Стили для ошибки при заполнении поля email, при состоянии покоя почему-то отрабатывает invalid.*/
-.field-newsletter:invalid {
+/* Стили для ошибки при заполнении поля email.*/
+ .invalid-newsletter {
   border-bottom: 3px solid #FF3D3D;
 }
 
@@ -3339,12 +3343,12 @@ line-height: 20px;
   line-height: 20px;
   color: #FFFFFF;
   background-color: #000;
-  display: block;
+ /* display: block; */
   width: 200px;
   padding: 19px 17px 21px 19px;
-  box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
   display: none;
-  z-index: 1;
+  z-index: 2;
   box-sizing: border-box;
 }
 
@@ -3371,8 +3375,8 @@ line-height: 20px;
   background-color: #EBEBEB;
 }
 
-.less-number:hover .modal-minus,
-.more-number:hover .modal-plus {
+.less-number:hover,
+.more-number:hover {
   opacity: 0.6;
 }
 
@@ -3381,8 +3385,8 @@ line-height: 20px;
   background-color: #EBEBEB;
 }
 
-.less-number:active .modal-minus,
-.more-number:active .modal-plus {
+.less-number:active,
+.more-number:active {
   opacity: 0.6;
 }
 
@@ -3397,19 +3401,16 @@ line-height: 20px;
 }
 
 /*неактивное состояние для + и - в модалке*/
-.less-number:disabled .modal-minus,
-.more-number:disabled .modal-plus {
+.less-number:disabled,
+.more-number:disabled {
   opacity: 0.3;
 }
 
 .number-form-field {
   min-height: 60px;
   box-sizing: border-box;
-  margin-left: auto;
-  width: 180px;
+  width: 60px;
   border: none;
-  padding-left: 60px;
-  padding-right: 60px;
   text-align: center;
   appearance: none;
   font-family: 'Rubik';
@@ -3417,7 +3418,8 @@ line-height: 20px;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  padding-bottom: 10px;
+  z-index: 1;
+  padding: 0;
 }
 
 .name-form-field:hover,

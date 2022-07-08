@@ -479,10 +479,6 @@ body {
   height: 40px;
 }
 
-.log-in .menu-item:nth-child(2) {
-  opacity: 0.3;
-}
-
 .log-in {
   width: 231px;
   display: grid;
@@ -490,7 +486,7 @@ body {
   gap: 28px;
 }
 
-.log-out {
+.log-out-text {
   color: rgba(0, 0, 0, 0.3);
 }
 

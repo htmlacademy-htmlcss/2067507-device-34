@@ -307,7 +307,7 @@ body {
   color: #ffffff;
   background-color: #000000;
   min-height: 301px;
-  display: none;
+  display: block;
   z-index: 5;
 }
 
@@ -315,8 +315,8 @@ body {
   margin-right: 23px;
 }
 
-.popover-open {
-  display: block;
+.popover-cart {
+  display: none;
 }
 
 .popover-close-button {
@@ -373,10 +373,6 @@ body {
   padding: 0;
   margin: 0;
   list-style-type: none;
-}
-
-.popover-cart {
-  width: 320px;
 }
 
 .popover-cart::before {
@@ -3276,8 +3272,8 @@ body {
   display: none;
 }
 
-.tooltip-toggle:hover + .tooltip-text,
-.tooltip-toggle:focus + .tooltip-text {
+.tooltip-toggle:hover + .tooltip-show,
+.tooltip-toggle:focus + .tooltip-show {
   display: block;
 }
 
@@ -3325,7 +3321,6 @@ body {
   width: 60px;
   border: none;
   text-align: center;
-  appearance: none;
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -3333,6 +3328,7 @@ body {
   line-height: 20px;
   z-index: 1;
   padding: 0;
+  appearance: textfield;
 }
 
 .name-form-field::placeholder,

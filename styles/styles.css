@@ -40,6 +40,11 @@ body {
   min-width: 1160px;
 }
 
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -127,10 +132,13 @@ body {
 }
 
 .search-button::placeholder {
-  font-family: inherit;
-  color: #000000;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+  color: #000000;
+  opacity: 1;
 }
 
 .page-number {
@@ -358,8 +366,8 @@ body {
 
 .cross {
   position: absolute;
-  left: 3px;
-  top: 3px;
+  left: 5px;
+  top: 5px;
 }
 
 .cart-item {
@@ -458,6 +466,7 @@ body {
   margin-left: auto;
   top: -5px;
   right: -5px;
+  border: none;
 }
 
 .cart-item-button:hover {
@@ -486,12 +495,12 @@ body {
   gap: 28px;
 }
 
-.log-out-text {
-  color: rgba(0, 0, 0, 0.3);
+.log-out-main {
+  display: none;
 }
 
-.menu-item + .visually-hidden {
-  display: none;
+.log-out-text {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .menu-basket {
@@ -677,7 +686,7 @@ body {
   text-transform: uppercase;
   color: #000000;
 }
-/*переделать состояния, нет отображния */
+
 .services-navigation .navigation-link:hover {
   opacity: 0.6;
 }
@@ -702,7 +711,7 @@ body {
   text-decoration: none;
 }
 
-/*Стили для закрытия каталога, Насколько ок то, что у меня + на - меняется только при помощи добавления класса, а не по нажатию?*/
+/*Стили для закрытия каталога*/
 .catalog-button-close:hover .catalog::after {
   opacity: 1;
 }
@@ -727,10 +736,6 @@ body {
 
 .catalog-button-close:active.button-close {
   opacity: 1;
-}
-
-.catalog-button-close:focus .catalog-menu-button::after {
-  transform: rotate(180deg);
 }
 
 /* Стили для открытия каталога */
@@ -760,9 +765,8 @@ body {
   opacity: 1;
 }
 
-.catalog-menu-button .catalog-menu-button::after {
+.catalog-button:focus-within .catalog-menu-button::after {
   transform: rotate(180deg);
-  outline: 2px solid #af4fff;
 }
 
 .catalog-text:hover {
@@ -799,18 +803,21 @@ body {
 }
 
 .number-text {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
   display: block;
   box-sizing: border-box;
   font-weight: 700;
   font-size: 180px;
-  line-height: 150px;
+  line-height: 30px;
   text-align: right;
   color: #ffffff;
   margin: 0;
   margin-left: auto;
   min-width: 250px;
-  padding-top: 7px;
-  margin-right: 48px;
+  padding-top: 64px;
+  margin-right: 50px;
+  height: 135px;
 }
 
 .icons-catalog-list {
@@ -879,7 +886,7 @@ body {
 .image-buttons-container {
   position: relative;
   margin-right: 40px;
-  margin-top: -172px;
+  margin-top: -150px;
 }
 
 .main-index {
@@ -941,14 +948,6 @@ body {
   z-index: 1;
 }
 
-.sliders-content + .visually-hidden {
-  display: none;
-}
-
-.slider-image {
-  display: block;
-}
-
 .sliders-content {
   list-style-type: none;
   margin: 0;
@@ -956,10 +955,23 @@ body {
   display: flex;
   flex-wrap: wrap;
   z-index: 2;
+  position: relative;
+}
+
+.sliders-content:nth-child(2) {
+  display: none;
+}
+
+.sliders-content:nth-child(3) {
+  display: none;
+}
+
+.slider-image {
+  display: block;
 }
 
 .sliders-text-container {
-  margin-top: -50px;
+  margin-top: -28px;
   width: 560px;
   right: 0;
   z-index: 3;
@@ -1310,7 +1322,6 @@ body {
   padding: 0;
   margin: 0;
   margin-right: 116px;
-  margin-bottom: 65px;
   margin-top: 64px;
   list-style-type: none;
   position: relative;
@@ -1449,19 +1460,24 @@ body {
 }
 
 .guarantee {
+  margin-top: 59px;
   padding-top: 13px;
   padding-bottom: 10px;
   background-image: url("../images/guarantee.svg");
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position-x: right;
+  background-position-y: 2px;
   width: 729px;
   display: none;
 }
 
 .loan {
+  margin-top: 59px;
+  padding-top: 13px;
   background-image: url("../images/credit.svg");
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position-x: right;
+  background-position-y: 6px;
   width: 729px;
   display: none;
 }
@@ -1581,11 +1597,15 @@ body {
 }
 
 .services-text {
-  width: 452px;
   margin: 0;
   color: #444444;
   margin-bottom: 72px;
   letter-spacing: normal;
+  width: 479px;
+}
+
+.delivery .services-text {
+  width: 453px;
 }
 
 .subtitle {
@@ -2630,12 +2650,11 @@ body {
   margin-bottom: 44px;
 }
 
-/* Класс для новых товаров в каталоге */
-.product-new {
-  background-image: url("../images/new.svg");
-  background-repeat: no-repeat;
-  background-position-x: 273px;
-  background-position-y: 27px;
+/* Класс для новых товаров в каталоге*/
+.new-item {
+  position: absolute;
+  right: 27px;
+  top: 27px;
 }
 
 .product-card-image {
@@ -2653,21 +2672,9 @@ body {
   position: absolute;
   border: none;
   top: 178px;
-  left: 50%;
+  left: 183px;
   transform: translateX(-50%);
   z-index: 2;
-  display: none;
-}
-
-.product-card-link::before {
-  content: " ";
-  position: absolute;
-  width: 160px;
-  height: 8px;
-  left: 98px;
-  top: 184px;
-  background-color: #ffe17f;
-  z-index: 1;
   display: none;
 }
 
@@ -2687,10 +2694,10 @@ body {
   display: initial;
   content: " ";
   position: absolute;
-  width: 160px;
+  width: 220px;
   height: 8px;
-  left: 98px;
-  top: 184px;
+  left: 70px;
+  top: 185px;
   background-color: #ffe17f;
   z-index: 1;
 }
@@ -2711,10 +2718,10 @@ body {
   display: initial;
   content: " ";
   position: absolute;
-  width: 160px;
+  width: 220px;
   height: 8px;
-  left: 98px;
-  top: 184px;
+  left: 70px;
+  top: 185px;
   background-color: #ffc700;
   z-index: 1;
 }
@@ -2940,8 +2947,8 @@ body {
   outline: 2px solid #af4fff;
 }
 
-/* Состояние выключенных кнопок для ссылок, которыt выглядят как кнопки */
-.disabled {
+/* Состояние выключенных кнопок для ссылок, которые выглядят как кнопки */
+.disabled-button-link {
   opacity: 0.3;
   pointer-events: none;
 }
@@ -3221,6 +3228,9 @@ body {
   height: 26px;
   margin-left: 8px;
   cursor: pointer;
+  background-image: url("../images/tooltip.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .form-label {

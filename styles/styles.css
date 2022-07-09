@@ -40,6 +40,11 @@ body {
   min-width: 1160px;
 }
 
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -317,17 +322,10 @@ body {
 .cart-picture {
   margin-right: 23px;
 }
-
+/*
 .popover-cart {
   display: none;
-}
-
-.popover-cart::after {
-  content: " ";
-  width: 100px;
-  position: absolute;
-
-}
+}*/
 
 .popover-close-button {
   background-color: #ffffff;
@@ -368,8 +366,8 @@ body {
 
 .cross {
   position: absolute;
-  left: 3px;
-  top: 3px;
+  left: 5px;
+  top: 5px;
 }
 
 .cart-item {
@@ -395,18 +393,7 @@ body {
   left: 153px;
   top: -3px;
 }
-/*
-.popover::after {
-  content: " ";
-  position: absolute;
-  background-color: #af4fff;
-  width: 1160px;
-  height: 40px;
-  z-index: 1;
-  top: -112px;
-  left: -857px;
-}
-*/
+
 .basket-first {
   width: 121px;
 }
@@ -479,6 +466,7 @@ body {
   margin-left: auto;
   top: -5px;
   right: -5px;
+  border: none;
 }
 
 .cart-item-button:hover {
@@ -812,7 +800,6 @@ body {
   background: linear-gradient(to bottom, #ffe17f 135px, #ffffff 135px);
   box-sizing: border-box;
   color: #000000;
-
 }
 
 .number-text {
@@ -2664,7 +2651,6 @@ body {
 }
 
 /* Класс для новых товаров в каталоге*/
-
 .new-item {
   position: absolute;
   right: 27px;
@@ -2686,21 +2672,9 @@ body {
   position: absolute;
   border: none;
   top: 178px;
-  left: 50%;
+  left: 183px;
   transform: translateX(-50%);
   z-index: 2;
-  display: none;
-}
-
-.product-card-link::before {
-  content: " ";
-  position: absolute;
-  width: 160px;
-  height: 8px;
-  left: 98px;
-  top: 184px;
-  background-color: #ffe17f;
-  z-index: 1;
   display: none;
 }
 
@@ -2720,10 +2694,10 @@ body {
   display: initial;
   content: " ";
   position: absolute;
-  width: 160px;
+  width: 220px;
   height: 8px;
-  left: 98px;
-  top: 184px;
+  left: 70px;
+  top: 185px;
   background-color: #ffe17f;
   z-index: 1;
 }
@@ -2744,10 +2718,10 @@ body {
   display: initial;
   content: " ";
   position: absolute;
-  width: 160px;
+  width: 220px;
   height: 8px;
-  left: 98px;
-  top: 184px;
+  left: 70px;
+  top: 185px;
   background-color: #ffc700;
   z-index: 1;
 }

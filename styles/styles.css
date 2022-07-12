@@ -225,9 +225,10 @@ img {
   grid-template-columns: 517px auto auto;
   gap: 26px;
   width: 1040px;
-  margin: 0 auto;
   margin-bottom: 30px;
   margin-top: -9px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .menu-item {
@@ -284,7 +285,7 @@ img {
 .basket-count {
   position: absolute;
   width: 21px;
-  height: 21px;
+  min-height: 21px;
   border-radius: 50%;
   background-color: #ffffff;
   font-family: "Rubik", sans-serif;
@@ -485,7 +486,7 @@ img {
   display: grid;
   grid-template-columns: auto 160px;
   width: 517px;
-  height: 40px;
+  min-height: 40px;
 }
 
 .log-in {
@@ -566,14 +567,12 @@ img {
 
 .catalog-wrapper {
   box-sizing: border-box;
-  padding-top: 199px;
   width: 1160px;
   display: flex;
   padding-bottom: 45px;
   position: absolute;
   background-color: #ffe17f;
-  z-index: -1;
-  top: -141px;
+  top: 57px;
   left: -60px;
   padding-left: 60px;
   padding-right: 60px;
@@ -891,7 +890,6 @@ img {
 
 .main-index {
   margin-top: -1px;
-  background: linear-gradient(to bottom, #ff3d3d00 1040px, #f0f0f0 1040px 1329px, #ff3d3d00 1329px);
 }
 
 .slider-buttons-container {
@@ -1309,11 +1307,16 @@ img {
   margin-bottom: 33px;
 }
 
+.services-container {
+  background: linear-gradient(to bottom, #ffffff00 102px, #f0f0f0 102px);
+  padding-bottom: 72px;
+  margin-bottom: 70px;
+}
+
 .services-options {
   display: flex;
   width: 1160px;
   margin: 0 auto;
-  margin-bottom: 141px;
   position: relative;
 }
 
@@ -1639,8 +1642,7 @@ img {
   background-color: #f0f0f0;
   height: 57px;
   padding: 0;
-  padding-left: 17px;
-  padding-top: 5px;
+  padding-top: 6px;
   border: none;
 }
 
@@ -1776,7 +1778,7 @@ img {
 .newsletter-form {
   display: flex;
   margin-bottom: 56px;
-  height: 57px;
+  min-height: 57px;
   margin-left: 0;
   margin-top: 3px;
 }
@@ -2809,8 +2811,14 @@ img {
   padding-right: 10px;
   background-color: #ffffff;
   cursor: pointer;
-  letter-spacing: 0.1em;
-  word-spacing: 0.2em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
 }
 
 .pagination-show-more:hover {
@@ -3186,8 +3194,12 @@ img {
 .field-newsletter {
   width: 559px;
   border-bottom: 3px solid #c4c4c4;
+  padding: 0;
   padding-left: 18px;
   padding-top: 3px;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  min-height: 57px;
 }
 
 /* Стили для ошибки при заполнении поля email.*/
@@ -3347,6 +3359,7 @@ img {
   font-size: 16px;
   line-height: 20px;
   color: #000000;
+  opacity: 0.3;
 }
 
 .name-form-field:hover,

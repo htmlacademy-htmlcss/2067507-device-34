@@ -486,7 +486,7 @@ img {
   display: grid;
   grid-template-columns: auto 160px;
   width: 517px;
-  height: 40px;
+  align-self: start;
 }
 
 .log-in {

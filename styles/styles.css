@@ -2156,25 +2156,26 @@ img {
   background-color: #000000;
 }
 
-.range-toggle {
-  position: absolute;
+.toggle-min {
   width: 20px;
   height: 20px;
-  background-color: #ebebeb00;
+  position: absolute;
+  top: -8px;
+  left: -10px;
   border: none;
+  background-color: #f0f0f0;
   cursor: pointer;
 }
 
-.range-toggle:focus + .toggle-min::after {
-  position: absolute;
-  content: " ";
+.toggle-max {
   width: 20px;
   height: 20px;
-  background-color: transparent;
-  left: -2px;
-  top: -2px;
-  outline: 2px solid #af4fff;
-  outline-offset: 1px;
+  position: absolute;
+  background-color: #f0f0f0;
+  border: none;
+  top: -8px;
+  right: -10px;
+  cursor: pointer;
 }
 
 .toggle-max::after {
@@ -2203,27 +2204,30 @@ img {
   border-radius: 50%;
 }
 
-.range-toggle:hover {
+.toggle-min:hover.toggle-min::after {
   opacity: 0.5;
 }
 
-.range-toggle:active {
+.toggle-max:hover.toggle-max::after {
+  opacity: 0.5;
+}
+
+.toggle-max:active {
   opacity: 1;
 }
 
-.range-toggle:focus {
+.toggle-min:active {
+  opacity: 1;
+}
+
+.toggle-max:focus {
   outline: 2px solid #af4fff;
   outline-offset: 1px;
 }
 
-.toggle-min {
-  top: -8px;
-  left: -10px;
-}
-
-.toggle-max {
-  top: -8px;
-  right: -10px;
+.toggle-min:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 1px;
 }
 
 .range-wrapper-inputs {

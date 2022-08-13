@@ -1,3 +1,7 @@
+Click to visit 
+https://m00n41ld.github.io/2067507-device-34/
+
+
 # Личный проект «Девайс»
 
 * Студент: [Мария Резник](https://up.htmlacademy.ru/htmlcss/34/user/2067507).
